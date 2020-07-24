@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel</title>
+</head>
+<body>
+    <img src="" alt="carousel image" height="200px" class="pics">
+    <button type="button" class="previous"> Previous </button>
+    <button type="button" class="next"> Next</button>
+    <script type="text/javascript" async>
+
+        var carousel = function(){
+            this.slides = document.querySelector('.pics');
+            this.nextBtn = document.querySelector('.next');
+            this.prevBtn = document.querySelector('.previous');
+            this.images = ['Beauty 04.jpg','Colorful Eyeshadow Ideas.jpg','Dainty Coral Choker.jpg','dramatic wedding makeup.jpg','Instagram.jpg','Lime Crime.jpg','Lipstick Kit For Travelling.jpg'];
+            this.counter = 0;
+
+            this.call = function(){
+                alert("Yeaaaaa it is a contructor...");
+            }
+        }
+
+        carousel.prototype.firstload = function(){
+            this.slides.src = this.images[this.counter];
+        }
+
+        carousel.prototype.nextslide = function (){
+                this.counter +=1;
+                this.slides.src = this.images[this.counter];
+
+                if(this.counter >= this.images.length){
+                    this.counter = 0;
+                    this.slides.src = this.images[this.counter];
+                };
+        }
+
+        carousel.prototype.previousslide = function(){
+           
+            if(this.counter <= this.images.length){
+                this.counter -= 1;
+                this.slides.src = this.images[this.counter];
+            } 
+            
+            if (this.counter < 0){
+                this.counter = this.images.length-1;
+                this.slides.src = this.images[this.counter];
+            }
+
+            //alert(this.counter + ' is the count');
+        
+        }
+
+        var Carousel = new carousel();
+            Carousel.firstload();
+        
+        var nextBtn = document.querySelector('.next');
+            nextBtn.addEventListener('click',function(){
+                Carousel.nextslide();
+                
+            }); 
+
+        var previous = document.querySelector('.previous');
+            previous.addEventListener('click',function(){
+                Carousel.previousslide();
+                //Carousel.call();
+            });
+
+    </script>
+</body>
+</html>
