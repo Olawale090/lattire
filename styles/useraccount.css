@@ -1,6 +1,7 @@
 body{
     background-image: url('../assets/icons/effect.svg');
     background-size: cover;
+    background-repeat: no-repeat;
 }
 .pagetitle{
     width: 100%;
@@ -60,9 +61,19 @@ label{
     margin-top: 2em;
 }
 
+.delivery_date_title{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.delivery_date_day{
+    font-weight: 500;
+}
+
 .delivery_location_title{
     font-size: 1em;
     font-weight: bold;
+    margin-top: 2em;
 }
 
 .delivery_location_address{
@@ -117,5 +128,6 @@ input:focus{
     width: 90%;
     height: 30em;
     margin-left: 5%;
+    margin-bottom: 5em;
     background-color: whitesmoke;
 }
