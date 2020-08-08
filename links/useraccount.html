@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/full_detail.css">
     <link rel="stylesheet" href="../styles/useraccount.css">
+    <script type="module" async src="../script/useraccount.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDafIc3mPhBtjUcn1CY_BkRw1hGZBvGJ-Q&callback=initMap">
+    </script>
     <title>User account settings</title>
 </head>
 <body>
@@ -211,5 +215,48 @@
             <li>Email:lattirefeedback@lattire.com</li>
         </ul>
     </footer>
+
+    <script>
+        function initMap() {
+            // The location of Uluru
+            var uluru = {lat: 3.9470, lng: 7.3775 };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 4, center: uluru, mapTypeId:'satellite'});
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({position: uluru, map: map});
+
+            var infoWindow = new google.maps.InfoWindow;
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(p){
+                    
+                    var position = {
+                        lat:p.coords.latitude,
+                        lng:p.coords.longitude
+                    };
+
+                    infoWindow.setPosition(position);
+                    infoWindow.setContent('Your location');
+                    infoWindow.open(map);
+                },function(){
+                    handleLocationError('geolocation failed',map.center());
+                });
+            }else{
+                handleLocationError('no geolocation available in your browser',map.center())
+            }
+
+            function handleLocationError(content,position){
+                infoWindow.setPosition(position);
+                infoWindow.setContent(content);
+                infoWindow.open(map);
+            }
+
+          }
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDafIc3mPhBtjUcn1CY_BkRw1hGZBvGJ-Q&callback=initMap">
+    </script>
 </body>
 </html>
