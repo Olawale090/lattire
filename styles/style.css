@@ -34,6 +34,7 @@ html,body{
 
 li{
     list-style: none;
+    
 }
 
 .navbar{
@@ -65,9 +66,54 @@ li{
     display: flex;
     flex-direction: row-reverse;
     width: 50%;
-    color: var(--minor_fColor);
+    color: var(--minor_fColor) !important;
     margin-left:55%;
 }
+
+.product_list{
+    width: 25em;
+    height: 40em;
+    background-color: white;
+    position: absolute;
+    margin-top:6em;
+    margin-left:0.5em;
+    display: flex;
+    flex-direction: column; 
+    /* justify-content: center; */
+    align-items: center;
+}
+
+/* .product_list::after{
+    content: '';
+    width: 2em;
+    height: 2em;
+    background-color: white;
+    position: absolute;
+    z-index: -1;
+    top: -1em;
+    left: 0.40em;
+    transform: rotate(45deg);
+} */
+.product_list>li{
+    width: 100%;
+    height:3em;
+    padding: 0.4em;
+    text-align: center;
+    margin-bottom: .2em;
+}
+
+.homeProd{
+    font-family: sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+
+
+
 
 .right_menu>li{
     padding-left: 3em;
