@@ -6,6 +6,7 @@ var uiWidgets = function(){
     this.toggle = document.querySelector(".menu_toggle");
     this.miniMenu = document.querySelector("#minor_menu");
     this.mobileProductList = document.querySelector(".mobile_product_list");
+    this.navBar = document.querySelector(".mainbar");
     // this.details = document.querySelector("");
 }
 
@@ -38,7 +39,18 @@ uiWidgets.prototype = {
 
             }
         })
-    }
+    },
+
+    scrollEffect(){
+        window.addEventListener('scroll',function () {
+            alert(window.pageXOffset);
+            if (window.pageYOffset >=40) {
+                this.navBar.style.backgroundColor = "red";
+                alert("Greater than 40")
+            }
+        })
+        
+    },
 };
 
 
@@ -46,13 +58,14 @@ var widget = new uiWidgets();
 
 widget.menu();
 widget.minorMenu();
+widget.scrollEffect();
 
 
 var carousel = function(){
     this.slides = document.querySelector('.hero');
     this.nextBtn = document.querySelector('.next');
     this.prevBtn = document.querySelector('.previous');
-    this.images = ["background-bags-bows-1050244.jpg","bargain-blouse-bright-1078958.jpg","assorted-blurred-background-boutique-994523.jpg","adorable-animal-bow-1663409.jpg","adult-contemporary-designer-suit-1405963.jpg"];
+    this.images = ["background-bags-bows-1050244.jpg","bargain-blouse-bright-1078958.jpg","assorted-blurred-background-boutique-994523.jpg","adorable-animal-bow-1663409.jpg","bag-boutique-business-336372.jpg"];
     this.counter = 0;
 }
 
@@ -89,4 +102,4 @@ var Carousel = new carousel();
 
     setInterval(function(){
         Carousel.nextslide()
-    },2000);
+    },3000);

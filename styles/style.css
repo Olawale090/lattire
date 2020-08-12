@@ -67,7 +67,7 @@ li{
     flex-direction: row-reverse;
     width: 40%;
     color: var(--minor_fColor) !important;
-    margin-left:13em;
+    margin-left:1em;
 }
 
 .product_list{
@@ -274,7 +274,7 @@ li{
 
 .main_search{
     display: flex;
-    margin-left: 30%;
+    margin-left: calc(75%/2);
     width:25%;
     height: 2em;
     font-family: var(--main_fFamily);
@@ -287,9 +287,23 @@ li{
     position: fixed;
 }
 
+.search_results{
+    position: absolute;
+    top: 5.5em;
+    left: calc(60%/2);
+    width: 40%;
+}
+
+.search_list{
+    background-color: white;
+    width: 100%;
+    margin-bottom: 0.5em;
+    height: 3em;
+}
+
 .mobile_search{
-    margin-left: 17em;
-    width: 25em;
+    margin-left: calc(23%);
+    width: 25%;
     border: solid black 0.1em;
     border-radius: 1em;
     outline: none;
@@ -311,7 +325,7 @@ li{
     background-size: cover;
     object-fit: cover;
     background-blend-mode: multiply;
-    transition: ease-in-out 2s;
+    transition: ease-in-out 3s;
 }
 
 .caption{
