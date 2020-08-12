@@ -82,6 +82,8 @@ li{
     z-index: 2; 
 }
 
+/* MOBILE MENU TOGGLE DISPLAY WITH ANIMATION - BLOCK BY BLOCK */
+/* mobile_product_list is for the menu list for mobile view */
 .mobile_product_list{
     width: 18em;
     background-color: white;
@@ -106,6 +108,57 @@ li{
 .mobile_product_list>li:hover{
     background-color: whitesmoke;
 }
+
+/* animation to hide mobile view menu list */
+
+.mobile_hide_toggle{
+    opacity: 0;
+    pointer-events: none;
+    animation-name: mobileHideToggle;
+    animation-duration: 0.1s;
+}
+
+@keyframes mobileHideToggle{
+    from{
+        transform: scale(1);
+        /* width: 18em; */
+        opacity: 1;
+    }
+
+    to{
+        transform:scale(0.1);
+        transform: translateY(0.1em);
+        /* width: 1em;
+        height: 0; */
+        opacity: 1;
+    }
+}
+
+
+.mobile_display{
+    pointer-events: none;
+    animation-name: mobileToggle;
+    animation-duration: 0.1s;
+}
+
+@keyframes mobileToggle{
+    from{
+        transform:scale(0.1);
+        transform: translateY(0.1em);
+        /* width: 1em;
+        height: 0; */
+        opacity: 1;
+    }
+
+    to{
+        transform:scale(1);
+        /* width: 18em; */
+        opacity: 1;
+    }
+}
+
+
+
 
 .hide_toggle{
     opacity: 0;
@@ -142,17 +195,6 @@ li{
     }
 }
 
-/* .product_list::after{
-    content: '';
-    width: 2em;
-    height: 2em;
-    background-color: white;
-    position: absolute;
-    z-index: -1;
-    top: -1em;
-    left: 0.40em;
-    transform: rotate(45deg);
-} */
 .product_list>li{
     width: 100%;
     height:3em;
@@ -202,6 +244,7 @@ li{
 
 .minor_menu:hover{
     background-color:rgb(233, 233, 233);
+    cursor: pointer;
 }
 
 .signin{
@@ -265,9 +308,10 @@ li{
     width:100%;
     height: 30em;
     background-color: rgba(0, 0, 0, 0.288);
-    background-image: url('../assets/pics/bargain-blouse-bright-1078958.jpg');
     background-size: cover;
+    object-fit: cover;
     background-blend-mode: multiply;
+    transition: ease-in-out 2s;
 }
 
 .caption{
@@ -353,6 +397,12 @@ li{
 
 .product_details{
     padding:2px;
+}
+
+.product_full_details{
+    color: var(--minor_fColor);
+    text-decoration: none;
+    font-weight: 400;
 }
 
 .btn{
