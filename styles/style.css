@@ -39,26 +39,25 @@ li{
 
 .navbar{
     display: flex;
+    height: 3em;
     width: var(--main_width);
     background-color: var(--major_background);
     font-family: var(--main_fFamily);
     font-size: var(--medium_fSize);
     font-weight: bold;
     padding-top: 0.7em;
+    z-index: 3;
+    position: fixed;
 }
 
 .mainbar{
-    height: 3em;
     top: 0;
-    position: fixed;
     background-color: white;
-    z-index: 3;
 }
 
 .minorbar{
-    margin-top: 3em;
-    height: 3em;
     background-color: rgb(250, 250, 250); 
+    top: 3em;
 }
 
 
@@ -67,7 +66,7 @@ li{
     flex-direction: row-reverse;
     width: 40%;
     color: var(--minor_fColor) !important;
-    margin-left:1em;
+    margin-left:52em;
 }
 
 .product_list{
@@ -93,7 +92,7 @@ li{
     flex-direction: column; 
     align-items: center;
     box-shadow: 1px 1px 10px 1px black;
-    z-index: 2; 
+    z-index: 3; 
     right: 0;
 }
 
@@ -240,6 +239,7 @@ li{
     border-radius: 5em;
     padding: 0.25em;
     transition: 0.3s;   
+    display: none;
 }
 
 .minor_menu:hover{
@@ -285,29 +285,38 @@ li{
     appearance: none;
     margin-top:-0.3em;
     position: fixed;
+    z-index: 2;
 }
 
 .search_results{
-    position: absolute;
+    position: fixed;
     top: 5.5em;
-    left: calc(60%/2);
-    width: 40%;
+    left: calc(70%/2.1);
+    width: 30%;
+    z-index: 2;
 }
 
 .search_list{
     background-color: white;
     width: 100%;
+    height: 2.5em;
     margin-bottom: 0.5em;
-    height: 3em;
+    font-weight: 200;
+    padding: .5em;
+    box-shadow: 0.1em 0.1em 10px 1px black;
 }
 
 .mobile_search{
-    margin-left: calc(23%);
+    margin-left: calc(75%/2);
+    margin-top: -0.3em;
     width: 25%;
+    height: 2em;
+    position: fixed;
     border: solid black 0.1em;
     border-radius: 1em;
     outline: none;
     padding-left: 0.5em;
+    display:none;
 }
 
 .menuicon{
@@ -323,9 +332,9 @@ li{
     height: 30em;
     background-color: rgba(0, 0, 0, 0.288);
     background-size: cover;
-    object-fit: cover;
     background-blend-mode: multiply;
-    transition: ease-in-out 3s;
+    transition: background-image ease-in-out 3s;
+    margin-top:4.8em;
 }
 
 .caption{

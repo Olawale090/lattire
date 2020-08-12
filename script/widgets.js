@@ -42,13 +42,11 @@ uiWidgets.prototype = {
     },
 
     scrollEffect(){
-        window.addEventListener('scroll',function () {
-            alert(window.pageXOffset);
-            if (window.pageYOffset >=40) {
-                this.navBar.style.backgroundColor = "red";
-                alert("Greater than 40")
+            if (window.pageYOffset >=100) {
+                this.navBar.style.backgroundColor = "rgb(60, 123, 240)";
+            }else{
+                this.navBar.style.backgroundColor = "white";
             }
-        })
         
     },
 };
@@ -58,9 +56,10 @@ var widget = new uiWidgets();
 
 widget.menu();
 widget.minorMenu();
-widget.scrollEffect();
 
-
+window.addEventListener('scroll',function () {
+    widget.scrollEffect();
+})
 var carousel = function(){
     this.slides = document.querySelector('.hero');
     this.nextBtn = document.querySelector('.next');
@@ -69,11 +68,13 @@ var carousel = function(){
     this.counter = 0;
 }
 
-carousel.prototype.firstload = function(){
-    this.slides.style.backgroundImage = `url('assets/pics/${this.images[this.counter]}`;
-}
+carousel.prototype = {
 
-carousel.prototype.nextslide = function (){
+    firstload(){
+        this.slides.style.backgroundImage = `url('assets/pics/${this.images[this.counter]}`;
+    },
+
+    nextslide(){
         this.counter +=1;
         this.slides.style.backgroundImage = `url('assets/pics/${this.images[this.counter]}`;
 
@@ -81,21 +82,23 @@ carousel.prototype.nextslide = function (){
             this.counter = 0;
             this.slides.style.backgroundImage = `url('assets/pics/${this.images[this.counter]}`;
         };
-}
+    },
 
-carousel.prototype.previousslide = function(){
+    previousslide(){
    
-    if(this.counter <= this.images.length){
-        this.counter -= 1;
-        this.slides.style.backgroundImage = `url('../assets/pics/${this.images[this.counter]}`;
-    } 
+        if(this.counter <= this.images.length){
+            this.counter -= 1;
+            this.slides.style.backgroundImage = `url('../assets/pics/${this.images[this.counter]}`;
+        } 
+        
+        if (this.counter < 0){
+            this.counter = this.images.length-1;
+            this.slides.style.backgroundImage = `url('../assets/pics/${this.images[this.counter]}`;
+        }
     
-    if (this.counter < 0){
-        this.counter = this.images.length-1;
-        this.slides.style.backgroundImage = `url('../assets/pics/${this.images[this.counter]}`;
     }
 
-}
+};
 
 var Carousel = new carousel();
     Carousel.firstload();
