@@ -72,7 +72,7 @@ li{
 .product_list{
     width: 18em;
     background-color: white;
-    position: absolute;
+    position: fixed;
     margin-top:0.3em;
     display: flex;
     flex-direction: column; 
@@ -86,7 +86,7 @@ li{
 .mobile_product_list{
     width: 18em;
     background-color: white;
-    position: absolute;
+    position: fixed;
     margin-top:0.3em;
     display: flex;
     flex-direction: column; 
@@ -333,7 +333,7 @@ li{
     background-color: rgba(0, 0, 0, 0.288);
     background-size: cover;
     background-blend-mode: multiply;
-    transition: background-image ease-in-out 3s;
+    transition: background-image ease-in-out 0.5s;
     margin-top:4.8em;
 }
 
