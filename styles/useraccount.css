@@ -14,7 +14,7 @@ body{
     padding: 0.2em;
     top: 3em;
     right: 1em;
-    width: 10em;
+    width: 15em;
     text-align: center;
     box-shadow: 0.1em 0.1em 0.5em 0.05em gray;
 }
@@ -24,9 +24,10 @@ body{
     font-size: 1em;
     font-weight: 500;
     padding: 0.5em;
+    cursor: pointer;
 }
 
-.user_account_menu_list:hover{
+.user_account_menu_list:hover {
     background-color: whitesmoke;
     cursor: pointer;
 }
