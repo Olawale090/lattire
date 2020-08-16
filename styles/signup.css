@@ -82,4 +82,22 @@ input::placeholder{
     margin-top: 1.5em;
     color: crimson;
     font-weight: 500;
+    font-style: italic;
+}
+
+
+/* this codes were only used in admin pages */
+
+.sign_up{
+    width: 19em;
+    height: 2.5em;
+    background-color: #4675f8;
+    text-align: center;
+    color: white;
+}
+
+a{
+    margin-left: -1.2em;
+    width: 100%;
+    text-decoration: none;
 }
