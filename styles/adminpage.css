@@ -1,0 +1,100 @@
+
+.admin_icon{
+    background-color: red;
+    border-radius: 10em;
+    margin-top: -0.5em;
+    height: 2.5em;
+    width: 1em;
+}
+
+.admin_account_menu{
+    position: fixed;
+    background-color: white;
+    padding: 0.2em;
+    top: 3em;
+    right: 1em;
+    width: 15em;
+    text-align: center;
+    box-shadow: 0.1em 0.1em 0.5em 0.05em gray;
+    z-index: 2;
+} 
+
+.admin_account_list{
+    font-family: 'Segoe UI';
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.side_nav{
+    height:92%;
+    width: 20%;
+    top: 8%;
+    background-color: #FBC04C;
+    position: absolute;
+}
+
+.right_side_nav{
+    display: grid;
+    grid-template:repeat(2,1fr)/repeat(4,1fr);
+    height: 95%;
+    width: 79%;
+    margin-top: 3.5%;
+    margin-left: 21%;
+    background-color: rgb(255, 255, 255);
+}
+
+.admin_img{
+    width: 6em;
+    height: 6em;
+    background-color: white;
+    border-radius: 5em;
+    margin-left: 4.5em;
+    margin-top: 1em;
+    background-image: url('../assets/icons/039-user.svg');
+    background-size: cover;
+}
+
+.admin_actions{
+    width: 100%;
+    font-family: 'Segoe UI';
+    font-size: 1.1em;
+    color: black;
+    font-weight: 400;
+}
+
+.admin_actions>li{
+    padding: 0.5em;
+    margin-left: -2em;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.admin_actions>li>a{
+    padding-left: 2em;
+    transition: 0.2s;
+}
+
+.admin_actions>li>a:hover{
+    color:white;
+}
+
+.admin_tabs{
+    width: 15em; 
+    height:15em;
+    border:solid#FBC04C 1px;
+    margin: 1.5em;
+    border-radius: 0.1em;
+    font-family: 'Segoe UI';
+    font-size: 1em;
+    transition: 0.2s;
+}
+
+.admin_tabs:hover{
+    background-color:#FBC04C;
+    cursor: pointer;
+}
