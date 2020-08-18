@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../styles/style.css">
+
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/signup.css">
     <link rel="stylesheet" href="../styles/login.css">
     <link rel="stylesheet" href="../styles/adminpage.css">
+    <link rel="stylesheet" href="../styles/useraccount.css">
     <link rel="stylesheet" href="../styles/manageproduct.css">
+    <link rel="stylesheet" href="../styles/full_detail.css">
 
     <script type="module" async src="../script/adminaccount.js"></script>
 
@@ -37,32 +40,70 @@
         <li class="admin_account_list"><a href="http://">Update products </a></li>
         <li class="admin_account_list"><a href="http://">E-mails received </a></li>
         <li class="admin_account_list"><a href="http://">Payment issues </a></li>
+        <li class="admin_account_list"><a href="http://">Customers account </a></li>
         <li class="admin_account_list"><a href="http://">Log out </a></li>
     </div>
 
     <div class="side_nav">
-
         <div class="admin_img"></div>
-            <ul class="admin_actions">
-                <li><a href="">Filters customers </a></li>
-                <li><a href="">Filter products </a></li>
-                <li><a href="">Quickly reply</a></li>
-                <li><a href="">Customer account updates</a></li>
-                <li><a href="">Log out</a></li>
-            </ul>
+        <ul class="admin_actions">
+            <li><a href="" class="admin_action_links">Filters customers </a></li>
+            <li><a href="" class="admin_action_links">Filter products </a></li>
+            <li><a href="" class="admin_action_links">Quickly reply</a></li>
+            <li><a href="" class="admin_action_links">Customer account updates</a></li>
+            <li><a href="" class="admin_action_links">Log out</a></li>
+        </ul>
     </div>
 
-    <header class="main_title">
-        <h1>manage products</h1>
+    <header class="mng_prod_title">
+        Manage products
     </header>
-    <div class="right_side_nav">
+
+    <div class="right_side_nav" style="padding:3em; margin-top:0.5em;">
         <a href="http://">
             <li class="admin_tabs manage_products">
-                <img src="../assets/icons/043-bags.svg" alt="avatar" height="150px" style="margin-top: 1.5em; margin-left:2.7em;">
-                <div class="mng_prd_tab" style="width: 100%; text-align:center; margin-top:2em;">Manage products</div>
+                <img src="../assets/icons/087-upload.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab">Upload Products</div>
             </li>
-        </a>  
+        </a>
+
+        <a href="http://">
+            <li class="admin_tabs manage_newsletter">
+                <img src="../assets/icons/024-qr-code.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab">Update Products</div>
+            </li>
+        </a>
+        
+        <a href="http://">
+            <li class="admin_tabs active_customers">
+                <img src="../assets/icons/086-refresh.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Returned products </div>
+            </li>
+        </a>
+        
+        <a href="http://">
+            <li class="admin_tabs">
+                <img src="../assets/icons/013-present.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Shipped products </div>
+            </li>
+        </a>
+        
+        <a href="http://">
+            <li class="admin_tabs">
+                <img src="../assets/icons/076-inbox.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Unavailable products </div>
+            </li>
+        </a>
+        
+        <a href="http://">
+            <li class="admin_tabs">
+                <img src="../assets/icons/005-exit.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Outside products </div>
+            </li>
+        </a>
+        
     </div>
+    
     
 </body>
 </html>
