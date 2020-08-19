@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/signup.css">
     <link rel="stylesheet" href="../styles/login.css">
     <link rel="stylesheet" href="../styles/adminpage.css">
     <link rel="stylesheet" href="../styles/useraccount.css">
     <link rel="stylesheet" href="../styles/admin_upload_products.css">
+    <link rel="stylesheet" href="../styles/admin_manage_newsletter.css">
 
     <script type="module" async src="../script/adminaccount.js"></script>
 
     <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
-    <title>Upload products</title>
+
+    <title>Newsletter</title>
 </head>
 <body>
     <div class="navbar mainbar">
@@ -47,50 +50,18 @@
     </div>
 
     <header class="head_title">
-         Upload product 
+        Manage Newsletter
     </header>
 
-    <section class="upload_prod_form_container">
-
-        <div class="user_first_profile">
-            <img src="../product_pics/blue-background-close-up-clothing-1579063.jpg" alt="User image" class="user_image">
-            <p>
-                <label for="" style="margin-left: 1em;">Upload new picture</label> <br>
-                <input type="file" class="upload_btn"  style="margin-left: 0;">
-                <button class="edit_btn choosepic"> Choose new picture</button>
-                <button class="change_btn uploadchange_btn">Change</button>
-            </p>
-        </div>
-
-
-        <form action="" method="post" class="user_profile_form">
-
-            <p>
-                <label for="">Product category</label> <br>
-                <input type="text" class="username settings_input" placeholder="Please enter product category">
-            </p>
-
-            <p>
-                <label for="">Product name</label> <br>
-                <input type="text" class="email settings_input" placeholder="Please enter product name">
-            </p>
-
-            <p>
-                <label for="">Product details</label> <br>
-                <input type="text" class="phone settings_input" placeholder="Please enter your product details">
-            </p>
-            
-            <p>
-                <label for="">Product price</label> <br>
-                <input type="text" class="private_pass settings_input" placeholder="Please enter your product price">
-            </p>
-            
-            <p>
-                <label for="">Product quantity</label> <br>
-                <input type="text" class="country settings_input" placeholder="Please enter product quantity">
-            </p>
-            <button type="submit" class="upload_submit_btn" style="border-radius:0.2em;">Upload product</button>
+    <div class="newsletter_tasks">
+        <form action="" method="post">
+            <!-- <label for="sender_email">Sender's email</label> -->
+            <input type="text" name="" id="" class="newsletter_inputs" placeholder="Title"><br>
+            <input type="text" name="" id="" class="newsletter_inputs" placeholder="our mail"><br>
+            <input type="text" name="" id="" class="newsletter_inputs" placeholder="your mail"><br>
+            <textarea placeholder="message" name="" class="newsletter_message"></textarea><br>
+            <button type="submit" class="send_message_btn">Send mail</button>
         </form>
-    </section>
+    </div>
 </body>
 </html>

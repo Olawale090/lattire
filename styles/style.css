@@ -243,7 +243,7 @@ li{
     border-radius: 5em;
     padding: 0.25em;
     transition: 0.3s;   
-    /* display: none; */
+    display: none;
 }
 
 .minor_menu:hover{
