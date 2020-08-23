@@ -1,0 +1,87 @@
+.admin_inactive_customers{
+    width: 79%;
+    height: 32em;
+    margin-left: 21%;
+    background-color: rgba(245, 245, 245, 0.473);
+    display: grid;
+    grid-template: repeat(1,1fr) / repeat(2,1fr);
+}
+
+.inactive_customer_lists{
+    overflow-y: auto;
+}
+
+.inactive_customer_lists>li{
+    font-family: 'Segoe UI';
+    font-size: 1em;
+    padding:0.2em;
+    height: 2em;
+    background-color: #d3d3d3cb;
+    transition: 0.2s;
+}
+
+.inactive_customer_lists>li:nth-child(even){
+    background-color:whitesmoke;
+}
+
+.inactive_customer_lists>li:hover{
+    background-color: #4675f8;
+    color: white;
+    cursor: pointer;
+}
+
+.inactive_customer_details{
+    display: grid;
+    grid-template: repeat(1,1fr)/repeat(2,1fr);
+    padding: 0.2em;
+    background-color:white;
+}
+
+.inactive_customer_pic{
+    background-image: url('../assets/pics/e7b913c7-ceb3-49c7-b671-e0134f38cc4e.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20em;
+    width: 18em;
+}
+
+.inactive_customer_btn{
+    border: none;
+    font-size: 1em;
+    font-family: 'Segoe UI';
+    font-weight: 500;
+    padding:0.5em;
+    margin-top: 1em;
+    border-radius: 0.2em;
+}
+
+.sendmail_btn{
+    background-color: #FBC04C;
+}
+
+.textmsg_btn{
+    background-color: #4675f8;
+    color: white;
+    margin-left: 2.2em;
+}
+.inactive_customer_data{
+    margin-left: 0.5em;
+    width: 98%;
+    padding:0.5em;
+}
+
+.inactive_customer_data_title{
+    font-size: 1em;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+
+.inactive_customer_data_value{
+    font-size: 1em;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    /* background-color: white;  */
+    color: #505050;
+    padding:0.5em;
+    border-bottom: solid #FBC04C 1px;
+}

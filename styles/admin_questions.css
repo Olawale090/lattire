@@ -1,0 +1,133 @@
+
+@font-face{
+    font-family: 'underground';
+    src: url('../assets/fonts/EuropeUnderground_black.ttf');
+}
+.chat_title{
+    background-color: #FBC04C;
+    width: 35%;
+    height: 2em;
+    margin-top: 2em;
+    margin-left: calc(65%/2);
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    font-family: 'underground';
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-top: 0.3em;
+}
+
+.question_box{
+    width: 35%;
+    max-height: 80%;
+    position: absolute;
+    height: 33em;
+    margin-left: calc(65%/2);
+    margin-top: 5em;
+    background-color: rgba(245, 245, 245, 0.877);
+    box-shadow: 0.2px 0.2px 10px 1px rgb(160, 160, 160);
+    overflow-y: auto;
+    padding-bottom:0.5em;
+}
+
+/* .question_box::-webkit-scrollbar-track{
+    background-color: red;
+    border: solid green 4px;
+    fill: blueviolet;
+} */
+
+.chat_section{
+    width: 100%;
+    float: right;
+}
+
+.admin_chat_bubble{
+    margin-top: 1em;
+    margin-right: 1em;
+    background-color: #FBC04C;
+    border-radius: 3em;
+    border-bottom-right-radius: 0;
+    float: right;
+    padding: 1em;
+}
+
+.admin_chat_img{
+    background-color: yellow;
+    background-image: url('../assets/pics/attractive-beautiful-beauty-206560.jpg');
+    background-size: cover;
+    height: 2em;
+    width: 2em;
+    object-fit: cover;
+    float: right;
+    border-radius: 10em;
+    margin-right: 0.5em;
+}
+
+.customer_chat_bubble{
+    margin-top: 1em;
+    margin-left: 1em;
+    background-color: rgb(235, 235, 235);
+    border-radius: 3em;
+    border-bottom-left-radius: 0;
+    padding: 1em;
+    float: left;
+}
+
+.admin_chat_bubble_header{
+    margin-left: 2%;
+    padding: 0.1em;
+    border-radius: 3em;
+    color: white;
+    font-family: Tahoma;
+}
+
+.customer_chat_bubble_header{
+    margin-left: 2%;
+    padding: 0.1em;
+    border-radius: 3em;
+    color: #FBC04C;
+    font-family: 'Segoe UI';
+}
+
+.text_container{
+    font-family: 'Segoe UI';
+    font-size: 0.8em;
+    padding: 0.2em;
+    border-radius: 3em;
+}
+
+.admin_chat{
+    margin-right: 0.5em;
+    float: right;
+}
+
+.customer_chat{
+    margin-left: 0.5em;
+    float: left;
+}
+
+.question_box_footer{
+    position: fixed;
+    width: 35%;
+    bottom  : 0;
+    left: calc(65%/2);
+    background-color: whitesmoke;
+}
+
+.chat_input{
+    width:90%;
+    margin-left: 0;
+    border: solid #FBC04C 1px;
+    border-radius: 2em;
+    color: black;
+}
+
+.chat_submit{
+    border:none;
+    width: 3em;
+    height: 3em;
+    background-color: #FBC04C;
+    border-radius: 5em;
+    color: white;
+}

@@ -6,16 +6,13 @@
 
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/signup.css">
-    <link rel="stylesheet" href="../styles/login.css">
     <link rel="stylesheet" href="../styles/adminpage.css">
-    <link rel="stylesheet" href="../styles/useraccount.css">
     <link rel="stylesheet" href="../styles/manageproduct.css">
-    <link rel="stylesheet" href="../styles/full_detail.css">
-
+    <link rel="stylesheet" href="../styles/admin_inactive_customers.css">
     <script type="module" async src="../script/adminaccount.js"></script>
 
     <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
-    <title>Manage products</title>
+    <title>Inactive customers</title>
 </head>
 <body>
     <div class="navbar mainbar">
@@ -60,51 +57,54 @@
     </div>
 
     <header class="mng_prod_title">
-        Manage products
+        INACTIVE CUSTOMERS
     </header>
 
-    <div class="right_side_nav" style="padding:3em; margin-top:0.5em;">
-        <a href="admin_upload_products.html" target="parent">
-            <li class="admin_tabs manage_products">
-                <img src="../assets/icons/087-upload.svg" class="img_tab" alt="avatar">
-                <div class="mng_prd_tab">Upload Products</div>
-            </li>
-        </a>
+    <div class="admin_inactive_customers">
 
-        <a href="admin_update_product.html">
-            <li class="admin_tabs manage_newsletter">
-                <img src="../assets/icons/024-qr-code.svg" class="img_tab" alt="avatar">
-                <div class="mng_prd_tab">Update Products</div>
-            </li>
-        </a>
-        
-        <a href="admin_returned_products.html">
-            <li class="admin_tabs active_customers">
-                <img src="../assets/icons/086-refresh.svg" class="img_tab" alt="avatar">
-                <div class="mng_prd_tab"> Returned products </div>
-            </li>
-        </a>
-        
-        <a href="admin_product_shipping.html">
-            <li class="admin_tabs">
-                <img src="../assets/icons/030-delivery-1.svg" class="img_tab" alt="avatar">
-                <div class="mng_prd_tab"> Shipped products </div>
-            </li>
-        </a>
-        
-        <a href="admin_unavailable_product.html">
-            <li class="admin_tabs">
-                <img src="../assets/icons/076-inbox.svg" class="img_tab" alt="avatar">
-                <div class="mng_prd_tab"> Unavailable products </div>
-            </li>
-        </a>
-        
-        <a href="admin_outside_products.html">
-            <li class="admin_tabs">
-                <img src="../assets/icons/005-exit.svg" class="img_tab" alt="avatar">
-                <div class="mng_prd_tab"> Outside products </div>
-            </li>
-        </a>
+        <div class="inactive_customer_lists">
+            <li>John Doe</li>
+            <li>Rio Ferdinand </li>
+            <li>Keneth johnson</li>
+            <li>Bobson Huan</li>
+            <li>Bobson Huan</li>
+            <li>Bobson Huan</li>
+            <li>Bobson Huan</li>
+            <li>something is here</li>
+            <li>something is here</li>
+            <li>something is here</li>
+            <li>something is here</li>
+            <li>something is here</li>
+            <li>something is here</li>
+            <li>something is here</li>
+            <li>something is here</li>
+            <li>something is here</li>
+            <li>something is here</li>
+            <li>something is here</li>
+        </div>
+
+        <div class="inactive_customer_details">
+            <div class="inactive_customer_controlls">
+                <div class="inactive_customer_pic">
+                </div>
+
+                <button class="inactive_customer_btn sendmail_btn">Send email</button>
+                <button class="inactive_customer_btn textmsg_btn">Send text message</button>
+            </div>
+            
+            <div class="inactive_customer_data">
+                <li class="inactive_customer_data_title">Name:</li>
+                <li class="inactive_customer_data_value">Michael Flora</li>
+                <li class="inactive_customer_data_title">email:</li>
+                <li class="inactive_customer_data_value">johndoe@gmail.com</li>
+                <li class="inactive_customer_data_title">Phone Number:</li>
+                <li class="inactive_customer_data_value">0909784759</li>
+                <li class="inactive_customer_data_title">Address:</li>
+                <li class="inactive_customer_data_value">23 crown city Los angeles</li>
+                <li class="inactive_customer_data_title">last activity</li>
+                <li class="inactive_customer_data_value">08/07/2019</li>
+            </div>
+        </div>
         
     </div>
     
