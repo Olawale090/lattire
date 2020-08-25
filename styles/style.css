@@ -116,6 +116,7 @@ li{
     opacity: 0;
     pointer-events: none;
     animation-name: mobileHideToggle;
+    display: none;
     animation-duration: 0.1s;
 }
 
@@ -124,6 +125,7 @@ li{
         transform: scale(1);
         /* width: 18em; */
         opacity: 1;
+        display: none;
     }
 
     to{
@@ -132,6 +134,8 @@ li{
         /* width: 1em;
         height: 0; */
         opacity: 1;
+
+        display: block;
     }
 }
 
@@ -167,17 +171,20 @@ li{
     pointer-events: none;
     animation-name: hideToggle;
     animation-duration: 0.5s;
+    display: none;
 }
 
 @keyframes hideToggle{
     from{
         transform: translateX(0.1em);
         opacity: 1;
+        display: none;
     }
 
     to{
         transform:translateX(-24em);
         opacity: 1;
+        display: block;
     }
 }
 
@@ -401,6 +408,7 @@ li{
     margin-left:1%;
     margin-bottom: 20px;
     padding-top: 0.6em;
+    background-color: white;
 }
 
 .card{

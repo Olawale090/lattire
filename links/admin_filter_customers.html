@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/signup.css">
     <link rel="stylesheet" href="../styles/adminpage.css">
+    <link rel="stylesheet" href="../styles/useraccount.css">
     <link rel="stylesheet" href="../styles/manageproduct.css">
     <link rel="stylesheet" href="../styles/admin_inactive_customers.css">
+    <link rel="stylesheet" href="../styles/admin_filter_customers.css">
+
     <script type="module" async src="../script/adminaccount.js"></script>
 
     <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
-    <title>Inactive customers</title>
+
+    <title>Filter customers</title>
 </head>
 <body>
     <div class="navbar mainbar">
@@ -58,30 +62,25 @@
     </div>
 
     <header class="mng_prod_title">
-        INACTIVE CUSTOMERS
+        Filter customers
+        <!-- <select name="" id="">
+            <option value="">Registered date</option>
+            <option value=""></option>
+            <option value="">something</option>
+        </select> -->
     </header>
-
     <div class="admin_inactive_customers">
-
+        
         <div class="inactive_customer_lists">
+
+            <input type="text" name="" class="filter_customer_input" placeholder="Enter username or email of customer">
+            <button type="submit" class="filter_customer_search_btn">Search</button>
+
             <li>John Doe</li>
             <li>Rio Ferdinand </li>
             <li>Keneth johnson</li>
             <li>Bobson Huan</li>
             <li>Bobson Huan</li>
-            <li>Bobson Huan</li>
-            <li>Bobson Huan</li>
-            <li>something is here</li>
-            <li>something is here</li>
-            <li>something is here</li>
-            <li>something is here</li>
-            <li>something is here</li>
-            <li>something is here</li>
-            <li>something is here</li>
-            <li>something is here</li>
-            <li>something is here</li>
-            <li>something is here</li>
-            <li>something is here</li>
         </div>
 
         <div class="inactive_customer_details">
@@ -108,6 +107,5 @@
         </div>
         
     </div>
-    
 </body>
 </html>
