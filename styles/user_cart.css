@@ -1,0 +1,12 @@
+.cart_remove_btn{
+    position: absolute; 
+    margin-top:1em; 
+    margin-left:1em; 
+    color:white; 
+    border:none; 
+    border-radius:5em; 
+    background-color:black; 
+    width:2em; 
+    height:2em; 
+    z-index:4;
+}

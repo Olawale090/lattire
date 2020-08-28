@@ -27,6 +27,11 @@ body{
     cursor: pointer;
 }
 
+.user_account_menu_list>a{
+    text-decoration: none;
+    color : black;
+}
+
 .user_account_menu_list:hover {
     background-color: whitesmoke;
     cursor: pointer;

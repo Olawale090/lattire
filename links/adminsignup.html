@@ -6,8 +6,13 @@
 
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/admin_signup.css">
     <link rel="stylesheet" href="../styles/login.css">
+
+
     <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
+
+    <script type="module" async src="../script/admin_signup.js"></script>
 
     <title>Administrator creation</title>
 </head>
@@ -21,15 +26,24 @@
     </div>
 
     <section class="form_container" style="height:auto;">
-        <form action="" method="post" class="form_plate">
+        <form action="" method="post" class="form_plate" style="padding-bottom: 1em; margin-bottom:1em;">
+            
+            <input type="file" name="" id="" value="Upload" class="admin_pic_upload">
+            <div class="admin_pic_holder"> </div>
+            
+            <p>
+                <label for="">Username</label> <br>
+                <input type="text" name="" placeholder="Please enter username" class="input_username">
+            </p>
+
             <p>
                 <label for="">E-mail</label> <br>
                 <input type="text" name="" placeholder="Please enter email" class="input_email">
             </p>
-
+            
             <p>
-                <label for="">Username</label> <br>
-                <input type="text" name="" placeholder="Please enter username" class="input_username">
+                <label for=""> Personal Identification Key</label> <br>
+                <input type="text" name="" placeholder="Please enter your identification key">
             </p>
             
             <p>
@@ -40,11 +54,6 @@
             <p>
                 <label for="">Confirm password</label> <br>
                 <input type="text" name="" placeholder="Please confirm password">
-            </p>
-
-             <p>
-                <label for="">Identification Pin</label> <br>
-                <input type="text" name="" placeholder="Please enter your identification key">
             </p>
 
             <p>

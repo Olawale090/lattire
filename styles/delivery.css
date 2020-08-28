@@ -1,0 +1,30 @@
+.pagetitle{
+    position: fixed;
+    top: -0.5em;
+    padding-left: 0.5em;
+    font-weight: bold;
+}
+
+.delivery_details{
+    width: 50%;
+    margin-left: 25%;
+    background-color: rgba(255, 255, 255, 0.849);
+    padding: 1em;
+    font-family: 'Segoe UI';
+    font-size: 1em;
+    color: rgb(78, 78, 78);
+    margin-top: 5em;
+}
+
+.customer_address,.delivery_interval, .pick_points{
+    background-color: whitesmoke;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 0.25em;
+    /* box-shadow: 0.1em 0.1em 1em 0.01em rgb(201, 201, 201); */
+}
+
+.google_map{
+    height: 20em;
+}
+
