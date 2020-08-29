@@ -56,9 +56,9 @@
             <img src="../assets/pics/attractive-beautiful-beauty-206560.jpg" alt="User image" class="user_image">
             <p>
                 <div class="user_info">Akindele Victoria</div><br>
-                <div class="user_city">Ibadan  <br> 
-                    <input type="text" class="user_location settings_input" placeholder="change your location">
-                    <button class="edit_btn">Edit</button> <button class="change_btn">Change</button>
+                <div class="user_city">Ibadan  
+                    <!-- <br>  -->
+                    
                 </div> 
 
                 <div class="user_delivery_city">
@@ -87,58 +87,66 @@
         <form action="" method="post" class="user_profile_form">
             <p>
                 <label for="">Upload new picture</label> <br>
-                <input type="file" class="upload_btn">
+                <input type="file" name="customer_pic_dir" class="upload_btn">
                 <button class="edit_btn choosepic"> Choose new picture</button>
-                <button class="change_btn uploadchange_btn">Change</button>
+                <button name="customer_pic_dir" class="change_btn uploadchange_btn">Change</button>
             </p>
 
             <p>
                 <label for="">Username</label> <br>
-                <input type="text" class="username settings_input" placeholder="Please enter username">
+                <input type="text" name="username" class="username settings_input" placeholder="Please enter username">
                 <button class="edit_btn">Edit</button>
-                <button class="change_btn">Change</button>
+                <button name="username_submit" class="change_btn">Change</button>
             </p>
 
             <p>
                 <label for="">Email</label> <br>
-                <input type="text" class="email settings_input" placeholder="Please enter your email">
+                <input type="text" name="email" class="email settings_input" placeholder="Please enter your email">
                 <button class="edit_btn">Edit</button>
-                <button class="change_btn">Change</button>
+                <button name="email_submit" class="change_btn">Change</button>
             </p>
 
             <p>
                 <label for="">Phone Number</label> <br>
-                <input type="text" class="phone settings_input" placeholder="Please enter your phone number">
+                <input type="text" name="phone_number" class="phone settings_input" placeholder="Please enter your phone number">
                 <button class="edit_btn">Edit</button>
-                <button class="change_btn">Change</button>
+                <button name="phoneno_submit" class="change_btn">Change</button>
             </p>
             
             <p>
                 <label for="">Private password</label> <br>
-                <input type="text" class="private_pass settings_input" placeholder="Please enter your private password">
+                <input type="text" name="private_password" class="private_pass settings_input" placeholder="Please enter your private password">
                 <button class="edit_btn">Edit</button>
-                <button class="change_btn">Change</button>
+                <button name="privatepassword_submit" class="change_btn">Change</button>
             </p>
             
             <p>
                 <label for="">Country</label> <br>
-                <input type="text" class="country settings_input" placeholder="Please enter country">
+                <input type="text" name="country" class="country settings_input" placeholder="Please enter country">
                 <button class="edit_btn">Edit</button>
-                <button class="change_btn">Change</button>
+                <button name="country_submit" class="change_btn">Change</button>
             </p>
 
             <p>
                 <label for="">State</label> <br>
-                <input type="text" class="state settings_input" placeholder="Please enter state">
+                <input type="text" name="state" class="state settings_input" placeholder="Please enter state">
                 <button class="edit_btn">Edit</button>
-                <button class="change_btn">Change</button>
+                <button name="state_submit"  class="change_btn">Change</button>
             </p>
             
             <p>
                 <label for="">City</label> <br>
-                <input type="text" class="city settings_input" placeholder="Please enter city">
+                <input type="text" name="city" class="city settings_input" placeholder="Please enter city">
                 <button class="edit_btn">Edit</button>
-                <button class="change_btn">Change</button>
+                <button name="city_submit" class="change_btn">Change</button>
+            </p>
+
+
+            <p>
+                <label for=""> Location </label> <br>
+                <input type="text" name="location" class="user_location settings_input" placeholder="change your location">
+                <button class="edit_btn">Edit</button> 
+                <button name="location_submit" class="change_btn">Change</button>
             </p>
         </form>
     </section>
