@@ -82,6 +82,7 @@ input::placeholder{
     color: crimson;
     font-weight: 500;
     font-style: italic;
+    transition: all 0.2s;
 }
 
 
