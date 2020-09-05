@@ -21,6 +21,9 @@
                 
                 if (!empty($this->username) && !empty($this->email) && !empty($this->password)) {
                     
+                    session_start();
+                    $_SESSION['username'] = mysqli_real_escape_string($this->mysqli, $_POST['username']);
+                    
                     $username = strip_tags($this->username);
                     $email = filter_var($this->email, FILTER_VALIDATE_EMAIL);
                     $password = strip_tags($this->password);
@@ -40,7 +43,7 @@
                             
                             if ( $customer_passQuery_data['customeremail'] === $email) {
 
-                                echo "This account already exist, please login ";
+                                echo " This account already exist, please login ";
 
                             }else {
 

@@ -175,3 +175,5 @@
     <input type="text" name="password" placeholder="enter password"> <br>
     <input type="submit" value="submit" name="submit">
 </form> -->
+
+<input type="image" src="../assets/pics/adorable-animal-bow-1663409.jpg" alt="Submit" width="48" height="48">

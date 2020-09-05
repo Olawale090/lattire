@@ -27,23 +27,23 @@
                         $query = "SELECT * FROM customerprofile
                                   WHERE customeremail = '$email' AND customerpassword = '$password'";
 
-                        $passQuery = $this->mysqli->query($query, MYSQLI_USE_RESULT);
+                        $passQuery = $this->mysqli->query($query, MYSQLI_STORE_RESULT);
                         $customer_data = $passQuery->fetch_array(MYSQLI_ASSOC);
 
-                        if ($customer_data['customeremail']=== $email && $customer_data['customerpassword'] === $password) {
+                        if ($customer_data['customeremail'] === $email && $customer_data['customerpassword'] === $password) {
 
                             echo "Login successful";
-
-                            $passQuery->free();
                             
                         } else {
-                            echo ' Account not found, please signup ';
+                            echo 'Account not found, please signup ';
                         }
                         
 
                     } else {
                        echo " Enter valid email or password ";
                     }
+
+                    $passQuery->free();
 
                 } else {
                     echo " Email or Password is empty ";

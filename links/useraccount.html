@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="../styles/style.css">
     
     <script type="module" async src="../script/useraccount.js"></script>
-    <script async defer
+    <!-- <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDafIc3mPhBtjUcn1CY_BkRw1hGZBvGJ-Q&callback=initMap">
-    </script>
+    </script> -->
+
+    <script type="module" async src="../script/customerProfileSetup.js"></script>
     <title>User account settings</title>
 </head>
 <body>
@@ -56,10 +58,7 @@
             <img src="../assets/pics/attractive-beautiful-beauty-206560.jpg" alt="User image" class="user_image">
             <p>
                 <div class="user_info">Akindele Victoria</div><br>
-                <div class="user_city">Ibadan  
-                    <!-- <br>  -->
-                    
-                </div> 
+                <div class="user_city">Ibadan  </div> 
 
                 <div class="user_delivery_city">
 
@@ -94,60 +93,61 @@
 
             <p>
                 <label for="">Username</label> <br>
-                <input type="text" name="username" class="username settings_input" placeholder="Please enter username">
-                <button class="edit_btn">Edit</button>
+                <input type="text" id="name_edit" name="username" class="form_username settings_input" placeholder="Please enter username" disabled>
+                <button class="edit_btn edit_btn_username">Edit</button>
                 <button name="username_submit" class="change_btn">Change</button>
             </p>
 
             <p>
                 <label for="">Email</label> <br>
-                <input type="text" name="email" class="email settings_input" placeholder="Please enter your email">
-                <button class="edit_btn">Edit</button>
+                <input type="text" name="email" class="email settings_input" placeholder="Please enter your email"  disabled>
+                <button class="edit_btn edit_btn_email">Edit</button>
                 <button name="email_submit" class="change_btn">Change</button>
             </p>
 
             <p>
                 <label for="">Phone Number</label> <br>
-                <input type="text" name="phone_number" class="phone settings_input" placeholder="Please enter your phone number">
-                <button class="edit_btn">Edit</button>
+                <input type="text" name="phone_number" class="phone settings_input" placeholder="Please enter your phone number" disabled>
+                <button class="edit_btn edit_btn_phoneNo">Edit</button>
                 <button name="phoneno_submit" class="change_btn">Change</button>
             </p>
             
             <p>
                 <label for="">Private password</label> <br>
-                <input type="text" name="private_password" class="private_pass settings_input" placeholder="Please enter your private password">
-                <button class="edit_btn">Edit</button>
+                <input type="text" name="private_password" class="private_pass settings_input" placeholder="Please enter your private password" disabled>
+                <button class="edit_btn edit_btn_private_password">Edit</button>
                 <button name="privatepassword_submit" class="change_btn">Change</button>
             </p>
             
             <p>
                 <label for="">Country</label> <br>
-                <input type="text" name="country" class="country settings_input" placeholder="Please enter country">
-                <button class="edit_btn">Edit</button>
+                <input type="text" name="country" class="country settings_input" placeholder="Please enter country" disabled>
+                <button class="edit_btn edit_btn_country">Edit</button>
                 <button name="country_submit" class="change_btn">Change</button>
             </p>
 
             <p>
                 <label for="">State</label> <br>
-                <input type="text" name="state" class="state settings_input" placeholder="Please enter state">
-                <button class="edit_btn">Edit</button>
+                <input type="text" name="state" class="state settings_input" placeholder="Please enter state" disabled>
+                <button class="edit_btn edit_btn_state">Edit</button>
                 <button name="state_submit"  class="change_btn">Change</button>
             </p>
             
             <p>
                 <label for="">City</label> <br>
-                <input type="text" name="city" class="city settings_input" placeholder="Please enter city">
-                <button class="edit_btn">Edit</button>
+                <input type="text" name="city" class="city settings_input" placeholder="Please enter city" disabled>
+                <button class="edit_btn edit_btn_city">Edit</button>
                 <button name="city_submit" class="change_btn">Change</button>
             </p>
 
 
             <p>
                 <label for=""> Location </label> <br>
-                <input type="text" name="location" class="user_location settings_input" placeholder="change your location">
-                <button class="edit_btn">Edit</button> 
+                <input type="text" name="location" class="user_location settings_input" placeholder="change your location" disabled>
+                <button class="edit_btn edit_btn_location">Edit</button> 
                 <button name="location_submit" class="change_btn">Change</button>
             </p>
+        
         </form>
     </section>
 
@@ -239,10 +239,10 @@
     <script>
         function initMap() {
             // The location of Uluru
-            var uluru = {lat:7.85257, lng: 3.93125 };
+            var uluru = {lat:6.465422, lng: 3.406448 };
             // The map, centered at Uluru
             var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 10, center: uluru, mapTypeId:'satellite'});
+                document.getElementById('map'), {zoom: 10, center: uluru});
             // The marker, positioned at Uluru
             var marker = new google.maps.Marker({position: uluru, map: map});
 

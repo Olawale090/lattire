@@ -3,26 +3,26 @@
     class customerprofile
     {
         public function __construct(){
+
             $this->mysqli = new mysqli('localhost','root','','lattire');
-            $this->username = $_POST['username'];
-            $this->email = mysqli_real_escape_string($this->mysqli,$_POST['email']);
-            $this->password = mysqli_real_escape_string($this->mysqli,$_POST['password']);
-            $this->confirm_password = $_POST['confirm_password'];
-            $this->location = $_POST['location'];
-            $this->phoneNo = $_POST['phone_number'];
-            $this->private_password = $_POST['private_password'];
-            $this->country = $_POST['country'];
-            $this->state = $_POST['state'];
-            $this->city = $_POST['city'];
-            $this->customer_pic_dir = $_FILES['customer_pic_dir'];
+            
+            $this->username = mysqli_real_escape_string($this->mysqli,$_POST['username']);
+            session_start();
+            
+            // $this->email = mysqli_real_escape_string($this->mysqli,$_POST['email']);
+            // $this->phoneNo = mysqli_real_escape_string($this->mysqli,$_POST['phone_number']);
+            // $this->private_password = mysqli_real_escape_string($this->mysqli,$_POST['private_password']);
+            // $this->country = mysqli_real_escape_string($this->mysqli,$_POST['country']);
+            // $this->state = mysqli_real_escape_string($this->mysqli,$_POST['state']);;
+            // $this->city = mysqli_real_escape_string($this->mysqli,$_POST['city']);
+            // $this->location = mysqli_real_escape_string($this->mysqli,$_POST['location']);
         }
 
-        public function customer_profile_update(){
-
-            $filename = $this->customer_pic_dir['name'];
-            $filesize = $this->customer_pic_dir['size'];
-            $filetemp = $this->customer_pic_dir['tmp_name'];
+        public function customer_upload_pic(){
             
+            $filename = $_FILES['customer_pic_dir']['name'];
+            $filesize = $_FILES['customer_pic_dir']['size'];
+            $filetemp = $_FILES['customer_pic_dir']['tmp_name'];
 
             if (isset($_POST['pic_dir_submit'])) { 
 
@@ -36,7 +36,18 @@
     
                         if ($upload == 1) {
                             
-                            echo "Upload successful";
+                            $location = $customer_pic_path.'/'.$filename;
+                    
+                            $location_query = " UPDATE customerprofile
+                                                SET customerpicdir = $location";
+
+                            if ($location_query) {
+
+                                echo " Picture updated successfully ";
+
+                            } else {
+                                echo " Picture update failed ";
+                            }
     
     
                         } else {
@@ -52,53 +63,48 @@
                 } else {
                     echo "Please upload a file";
                 }
-                
 
-                $location = $customer_pic_path.'/'.$filename;
-                    
-                $location_query = " UPDATE customerprofile
-                                    SET customerpicdir = $location";
+            } 
 
-                if ($location_query) {
+        }
 
-                    echo " Picture updated successfully ";
-
-                } else {
-                    echo " Picture update failed ";
-                }
-
-
-            }
-
+        public function customer_username_update(){
+            
             if (isset($_POST['username_submit'])) { 
 
-                    if (!empty($this->username)) {
-                        $username = strip_tags($this->username);
-                        $username_query = " UPDATE customerprofile
-                                            SET customername = $username";
-                        
-                        if ($username_query) {
+                if (!empty($this->username)) {
+                    $username = strip_tags($this->username);
+                    $username_query = " UPDATE customerprofile
+                                        SET customername = '$username'
+                                        WHERE customername = '$name'";
+                    
+                    if ($username_query) {
 
-                            echo " Username updated successfully";
-
-                        } else {
-                            echo " Username update failed ";
-                        }
-                        
+                        echo " Username updated successfully";
 
                     } else {
-                       echo "Please enter username";
+                        echo " Username update failed ";
                     }
-                
+                    
+
+                } else {
+                   echo "Please enter username";
+                }
+            
 
             }
+        }
 
+
+
+
+        public function customer_email_update(){
             if (isset($_POST['email_submit'])) { 
 
                 if (!empty($this->email)) {
                     $email = strip_tags($this->email);
                     $email_query = " UPDATE customerprofile
-                                        SET customeremail = $email";
+                                        SET customeremail = '$email'";
 
                     if ($email_query) {
 
@@ -113,13 +119,15 @@
                 }
 
             }
+        }
 
+        public function customer_phoneNo_update(){
             if (isset($_POST['phoneno_submit'])) { 
 
                 if (!empty($this->phoneNo)) {
                     $phone_number = strip_tags($this->phoneNo);
                     $phone_number_query = " UPDATE customerprofile
-                                            SET customerphoneno = $phone_number";
+                                            SET customerphoneno = '$phone_number'";
 
                     if ($phone_number_query) {
 
@@ -134,13 +142,16 @@
                 }
 
             }
+        }
 
+
+        public function customer_private_password_update(){
             if (isset($_POST['privatepassword_submit'])) { 
 
                 if (!empty($this->private_password)) {
                     $private_password = strip_tags($this->private_password);
                     $private_password_query = " UPDATE customerprofile
-                                                SET privatepassword = $private_password";
+                                                SET privatepassword = '$private_password'";
 
                     if ($private_password_query) {
 
@@ -157,14 +168,15 @@
                 }
 
             }
-
-
+        }
+                                                                 
+        public function customer_country_update(){
             if (isset($_POST['country_submit'])) { 
 
                 if (!empty($this->country)) {
                     $country= strip_tags($this->country);
                     $country_query = " UPDATE customerprofile
-                                       SET customercountry = $country";
+                                       SET customercountry = '$country'";
 
                     if ($country_query) {
 
@@ -181,15 +193,15 @@
                 }
 
             }
+        }
 
-
-
+        public function customer_state_update(){
             if (isset($_POST['state_submit'])) { 
 
                 if (!empty($this->state)) {
                     $state= strip_tags($this->state);
                     $state_query = " UPDATE customerprofile
-                                     SET customerstate = $state";
+                                     SET customerstate = '$state'";
 
                     if ($state_query) {
 
@@ -206,15 +218,17 @@
                 }
 
             }
+        }
 
 
+        public function customer_city_update(){
 
             if (isset($_POST['city_submit'])) { 
 
                 if (!empty($this->city)) {
                     $city= strip_tags($this->city);
                     $city_query = " UPDATE customerprofile
-                                     SET customerstate = $city";
+                                     SET customerstate = '$city'";
 
                     if ($city_query) {
 
@@ -232,13 +246,16 @@
 
             }
 
+        }
 
+
+        public function customer_location_update(){
             if (isset($_POST['location_submit'])) { 
 
                 if (!empty($this->location)) {
                     $location= strip_tags($this->location);
                     $location_query = " UPDATE customerprofile
-                                        SET customerstate = $location";
+                                        SET customerstate = '$location'";
 
                     if ($location_query) {
 
@@ -255,12 +272,13 @@
                 }
 
             }
-
         }
+
     }
     
 
-
+$customer_updates = new customerprofile();
+$customer_updates->customer_username_update();
 
 
 ?>

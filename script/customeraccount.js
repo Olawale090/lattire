@@ -1,12 +1,9 @@
 "use strict";
 
 const customerForms = function () {
-    // this.username = document.querySelector(".input_username");
     this.email = document.querySelector(".input_email");
     this.password = document.querySelector(".input_password");
-    // this.confirmPass = document.querySelector(".confirm_input_password");
     this.submitBtn = document.querySelector(".submit_btn");
-    // this.signupBtn = document.querySelector(".signup_btn");
     this.notification = document.querySelector(".notification");
 }
 
@@ -16,7 +13,7 @@ customerForms.prototype ={
         this.submitBtn.addEventListener('click', (event)=>{
 
             event.preventDefault();
-            let params = 'email=' + this.email.value + '& password=' + this.password.value;
+            let params = 'email=' + this.email.value + '&password=' + this.password.value;
             const xhr = new XMLHttpRequest();
             
             xhr.open('POST','../php/customerlogin.php', true);
@@ -62,4 +59,3 @@ customerForms.prototype ={
 
 const customerAuthentication = new customerForms();
 customerAuthentication.login();
-// customerAuthentication.register();

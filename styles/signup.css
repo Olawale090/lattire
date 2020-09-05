@@ -50,8 +50,6 @@ input::placeholder{
     color: rgb(180, 180, 180);
 }
 
-
-
 .submit_btn{
     background-color:var(--minor_fColor);
     color: rgb(255, 255, 255);
