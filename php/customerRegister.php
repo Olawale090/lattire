@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     class customer_registration
     {
         public function __construct(){
@@ -21,9 +21,6 @@
                 
                 if (!empty($this->username) && !empty($this->email) && !empty($this->password)) {
                     
-                    session_start();
-                    $_SESSION['username'] = mysqli_real_escape_string($this->mysqli, $_POST['username']);
-                    
                     $username = strip_tags($this->username);
                     $email = filter_var($this->email, FILTER_VALIDATE_EMAIL);
                     $password = strip_tags($this->password);
@@ -33,17 +30,17 @@
                         
                         if ($username && $email && $password) {
 
-                            $customer_exist_query = "SELECT customeremail FROM customerprofile 
+                            $customer_exist_query = "SELECT * FROM customerprofile 
                                                      WHERE customeremail = '$email'";
 
                             $customer_exist_passQuery = $this->mysqli->query($customer_exist_query, MYSQLI_USE_RESULT);
-
                             $customer_passQuery_data = $customer_exist_passQuery->fetch_array(MYSQLI_ASSOC);
+                           
 
                             
                             if ( $customer_passQuery_data['customeremail'] === $email) {
-
-                                echo " This account already exist, please login ";
+                               
+                                    echo "This account already exist, please login " .  $customer_passQuery_data['customername']; 
 
                             }else {
 
@@ -59,7 +56,9 @@
 
                                 if ($passQuery && $passProfileQuery) {
 
-                                    echo 'Form submitted successfuly';
+                                    // $_SESSION['USERNAME'] = mysqli_real_escape_string($this->mysqli, $_POST['username']);
+
+                                    echo ' Form submitted successfuly ';
     
                                 } else {
     

@@ -1,11 +1,12 @@
 <?php 
-
+    session_start();
     class customer_authentication
     {
 
         public function __construct(){
             $this->mysqli = new mysqli('localhost','root','','lattire');
             $this->email = mysqli_real_escape_string($this->mysqli, $_POST['email']);
+            $_SESSION['customeremail'] = $this->email;
             $this->password = mysqli_real_escape_string($this->mysqli, $_POST['password']);
         }
 
@@ -32,18 +33,16 @@
 
                         if ($customer_data['customeremail'] === $email && $customer_data['customerpassword'] === $password) {
 
-                            echo "Login successful";
+                            echo json_encode($customer_data); 
                             
                         } else {
-                            echo 'Account not found, please signup ';
+                            echo ' Account not found, please signup '.$_SESSION['customeremail'];
                         }
                         
 
                     } else {
                        echo " Enter valid email or password ";
                     }
-
-                    $passQuery->free();
 
                 } else {
                     echo " Email or Password is empty ";
@@ -57,6 +56,5 @@
     $customer_auth = new customer_authentication();
     $customer_auth->database_connection();
     $customer_auth->customer_validation();
-    // $customer_auth->customer_session();
 
 ?>
