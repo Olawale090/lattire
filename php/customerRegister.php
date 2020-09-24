@@ -5,6 +5,7 @@
         public function __construct(){
             $this->mysqli = new mysqli('localhost','root','','lattire');
             $this->username = mysqli_real_escape_string($this->mysqli, $_POST['username']);
+            $_SESSION['customer_name'] = $this->username;
             $this->email = mysqli_real_escape_string($this->mysqli, $_POST['email']);
             $this->password = mysqli_real_escape_string($this->mysqli, $_POST['password']);
             $this->confirm_password = mysqli_real_escape_string($this->mysqli, $_POST['confirm_password']);

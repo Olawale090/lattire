@@ -72,8 +72,10 @@ customerProfileSettings.prototype = {
                     this.city.value = data.customercity;
                     this.location.value = data.customerlocation;
 
+                    let userCity = document.querySelector(".user_city");
                     let deliveryLocationAddress = document.querySelector(".delivery_location_address");
 
+                    userCity.innerHTML = data.customercity;
                     deliveryLocationAddress.innerHTML = data.customerlocation;
 
 
@@ -130,7 +132,38 @@ customerProfileSettings.prototype = {
             };
 
             reader.readAsDataURL(this.picture.files[0]);
+
         });
+    },
+
+    customerImageUpload(){
+
+        document.querySelector('.uploadchange_btn').addEventListener('click',(event)=>{
+            
+            event.preventDefault();
+            
+            let param = 'customer_pic_dir';
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST','../php/customerpicupload.php', true);
+            xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+            xhr.onload = ()=>{
+                if (xhr.status === 200) {
+                    
+                    alert(xhr.responseText);
+
+                }
+            };
+
+            xhr.onerror = (error)=>{
+                console.error(error);
+            };
+
+            xhr.send(param);
+
+        });
+        
     },
 
     editBtnEvent(){
@@ -440,6 +473,7 @@ customerProfileSettings.prototype = {
 
 const customerProfile = new customerProfileSettings();
 customerProfile.pictureUpload();
+customerProfile.customerImageUpload();
 customerProfile.editBtnEvent();
 customerProfile.logout();
 customerProfile.loadAllData();

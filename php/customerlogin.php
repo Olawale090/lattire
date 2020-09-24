@@ -36,7 +36,7 @@
                             echo json_encode($customer_data); 
                             
                         } else {
-                            echo ' Account not found, please signup '.$_SESSION['customeremail'];
+                            echo ' Account not found, please signup ';
                         }
                         
 
