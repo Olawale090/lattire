@@ -7,6 +7,7 @@
             $this->username = mysqli_real_escape_string($this->mysqli, $_POST['username']);
             $_SESSION['customer_name'] = $this->username;
             $this->email = mysqli_real_escape_string($this->mysqli, $_POST['email']);
+            $_SESSION['customeremail'] = $this->email;
             $this->password = mysqli_real_escape_string($this->mysqli, $_POST['password']);
             $this->confirm_password = mysqli_real_escape_string($this->mysqli, $_POST['confirm_password']);
         }
@@ -54,8 +55,11 @@
                                                   VALUES ('$username','$email','$password')";
 
                                 $passProfileQuery = $this->mysqli->query($profile_query, MYSQLI_USE_RESULT);
+                                
 
                                 if ($passQuery && $passProfileQuery) {
+                                    
+                                    mkdir("../customer_pics/".$username);
 
                                     // $_SESSION['USERNAME'] = mysqli_real_escape_string($this->mysqli, $_POST['username']);
 

@@ -39,10 +39,45 @@ const adminaccount = function(){
 };
 
 adminaccount.prototype = {
-    adminlogin(){
+
+    adminPicUpload(){
         this.submit.addEventListener('click',(event)=>{
+
             event.preventDefault();
-            // alert("working");
+            
+            let formData = new FormData(document.querySelector(".form_plate"));
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST','../php/adminpicupload.php',true);
+
+            xhr.onload = ()=>{
+                if (xhr.status === 200) {
+                    
+                    this.notification.innerHTML = xhr.responseText;
+                    alert(xhr.responseText);
+
+                }else if(xhr.status === 404){
+
+                    alert("page not found");
+
+                }
+            };
+
+            xhr.onerror = (e)=>{
+                console.error("Error found", e);
+            };
+
+
+            xhr.send(formData);
+
+        });
+    },
+
+    adminSignUp(){
+        this.submit.addEventListener('click',(event)=>{
+    
+            event.preventDefault();
+            
             const params = 'admin_name='+this.username.value + '&admin_email=' + this.email.value + '&admin_personal_identification_key=' + this.privateID.value + '&admin_password=' + this.password.value + '&admin_confirm_password='+this.confirmPass.value + '&admin_submit='+this.submit;
 
             const xhr = new XMLHttpRequest();
@@ -54,19 +89,32 @@ adminaccount.prototype = {
                     
                     this.notification.innerHTML = xhr.responseText;
 
+                    if(this.notification.innerHTML === "Picture uploaded successfully"){
+
+                        window.open("../adminlogin.html","_blank");
+
+                    }
+
                 }else if(xhr.status === 404){
                     alert("page not found");
                 }
             };
 
+            xhr.onerror = (error)=>{
+                alert("error found " + error);
+            };
 
-            xhr.send(params)
-
+            xhr.send(params);
 
         });
     }
 };
 
 
-let admin_reg = new adminaccount();
-admin_reg.adminlogin();
+let adminReg = new adminaccount();
+adminReg.adminSignUp();
+
+setTimeout(()=>{
+    adminReg.adminPicUpload();
+}, 100);
+

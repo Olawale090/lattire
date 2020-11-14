@@ -12,7 +12,7 @@ class customerlogout
     public function logoutuser (){
         
             session_destroy();
-            echo 'session deleted';
+            echo 'You are logged out';
         
     }
     

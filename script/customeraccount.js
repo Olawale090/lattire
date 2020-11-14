@@ -36,18 +36,6 @@ customerForms.prototype ={
                             console.log(typeof data);
                             alert(data.customername);
 
-                            localStorage.setItem('customerName',data.customername);
-                            localStorage.setItem('customerEmail',data.customeremail);
-                            localStorage.setItem('customerPhoneNo',data.customerphoneno);
-                            localStorage.setItem('customerPicDir',data.customerpicdir);
-                            localStorage.setItem('customerCountry',data.customercountry);
-                            localStorage.setItem('customerState',data.customerstate);
-                            localStorage.setItem('customerCity',data.customercity);
-                            localStorage.setItem('customerLocation',data.customerlocation);
-                            localStorage.setItem('privatePassword',data.privatepassword);
-                            localStorage.setItem('updatetime',data.updatetime);
-                            localStorage.setItem('customerPassword',data.customerpassword);
-
                             window.open('../index.html','_self');
                             this.notification.innerHTML = "Login Successful";
                             this.nofification.style.color = "#4675f8";

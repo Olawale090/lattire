@@ -1,9 +1,5 @@
 'use strict';
 
-// import { customerAuthentication } from "./customeraccount";
-
-// customerAuthentication.login();
-
 const customerProfileSettings = function () {
     
     // FORM INPUTS
@@ -63,6 +59,7 @@ customerProfileSettings.prototype = {
                     
                     let data = JSON.parse(xhr.responseText);
                     this.navBarUsername.textContent = data.customername;
+                    this.picholder.src = data.customerpicdir;
                     this.username.value = data.customername;
                     this.email.value = data.customeremail;
                     this.phoneNo.value = data.customerphoneno;
@@ -72,16 +69,18 @@ customerProfileSettings.prototype = {
                     this.city.value = data.customercity;
                     this.location.value = data.customerlocation;
 
+                    // BINDING TO THE USER ACCOUNT PAGE
+
+                    let usernameinfo = document.querySelector('.user_info');
                     let userCity = document.querySelector(".user_city");
                     let deliveryLocationAddress = document.querySelector(".delivery_location_address");
-
+            
+                    usernameinfo.innerHTML = data.customername;
                     userCity.innerHTML = data.customercity;
                     deliveryLocationAddress.innerHTML = data.customerlocation;
 
-
-                    
-                    // console.log(data);
-                    // console.log (xhr.responseText);
+                    // this.navbarImageContainer.style.backgroundImage = `url('${data.customerpicdir}')`;
+                    this.navbarImageContainer.src = data.customerpicdir;
 
                 }
             };
@@ -141,18 +140,22 @@ customerProfileSettings.prototype = {
         document.querySelector('.uploadchange_btn').addEventListener('click',(event)=>{
             
             event.preventDefault();
-            
-            let param = 'customer_pic_dir';
+
+            let formData = new FormData(document.querySelector(".user_profile_form"));
 
             let xhr = new XMLHttpRequest();
             xhr.open('POST','../php/customerpicupload.php', true);
-            xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+            // xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+            console.log(xhr);
 
             xhr.onload = ()=>{
                 if (xhr.status === 200) {
                     
                     alert(xhr.responseText);
 
+                }else if(xhr.status === 404){
+                    alert("page not found");
                 }
             };
 
@@ -160,7 +163,7 @@ customerProfileSettings.prototype = {
                 console.error(error);
             };
 
-            xhr.send(param);
+            xhr.send(formData);
 
         });
         

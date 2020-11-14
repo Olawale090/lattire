@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/signup.css">
     <link rel="stylesheet" href="../styles/login.css">
     <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
+    <script type="module" async src="../script/adminlogin.js"></script>
 
     <title>Admin login page</title>
 </head>
@@ -24,17 +25,17 @@
         <form action="" method="post" class="form_plate">
             <p>
                 <label for="">E-mail</label> <br>
-                <input type="text" name="" placeholder="Please enter email" class="input_email">
+                <input type="text" name="admin_email" placeholder="Please enter email" class="input_email admin_email">
             </p>
 
             <p>
                 <label for="">Admin PIK </label> <br>
-                <input type="text" name="" placeholder="Please enter Admin PIK" class="input_password">
+                <input type="text" name="admin_personal_identification_key" placeholder="Please enter Admin PIK" class="input_password admin_pik">
             </p>
             
             <p>
                 <label for="">Password</label> <br>
-                <input type="text" name="" placeholder="Please enter password" class="input_password">
+                <input type="password" name="admin_password" placeholder="Please enter password" class="input_password admin_password">
             </p>
             
 
@@ -45,7 +46,7 @@
             <a href="adminsignup.html"> <input type="button" class="sign_up" value="Create Admin Account"> </a>
             
 
-            <footer class="notification">Something went wrong</footer>
+            <footer class="notification"></footer>
         </form>
     </section>
 </body>

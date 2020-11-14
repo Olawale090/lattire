@@ -1,7 +1,6 @@
 .userimg_container{
     background-color: red;
-    background-image: url('../assets/pics/bag-boutique-business-336372.jpg');
-    background-size: cover;
+    object-fit: cover;
     height: 2.5em;
     width: 2.5em;
     border-radius: 3em;

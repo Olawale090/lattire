@@ -7,60 +7,70 @@
 
             $this->mysqli = new mysqli('localhost','root','','lattire');
 
-            // $this->username = mysqli_real_escape_string($this->mysqli,$_POST['username']);
-            // $this->file = $_FILES['customer_pic_dir'];
         }
 
         public function customer_upload_pic(){
             
-            $filename = $_FILES['customer_pic_dir']['name'];
-            $filesize = $_FILES['customer_pic_dir']['size'];
-            $filetemp = $_FILES['customer_pic_dir']['tmp_name'];
+            $filename = $_FILES['customerpicdir']['name'];
+            $filesize = $_FILES['customerpicdir']['size'];
+            $filetemp = $_FILES['customerpicdir']['tmp_name'];
 
-            $date = date('Y-m-d-h-i-s');
-
-            $cutomer_pic_path = mkdir("../customer_pics/".$_SESSION['customer_name']."-".$date);
-                
-            if (is_uploaded_file($filetemp)) {
+            $customer_pic_path = "../customer_pics/".$_SESSION['customer_name']."/".$filename;
+            $file_extension = explode(".",$filename);
+            $only_file_extension = strtolower(end($file_extension));
+            $allowed_extensions = ["jpeg","jpg","png"];
             
-                if ($filesize < 2000000) {
 
-                    $upload = move_uploaded_file($filetemp,$customer_pic_path.'/'.$filename);
-                    $sessionEmail = $_SESSION['customeremail'];
-
-                    if ($upload == 1) {
-                        
-                        $location = $customer_pic_path.'/'.$filename;
-
+            if (in_array($only_file_extension,$allowed_extensions) ) {
                 
-                        $location_query = " UPDATE customerprofile
-                                            SET customerpicdir = $location
-                                            WHERE customeremail = $sessionEmail ";
-
-                        if ($location_query) {
-
-                            echo " Picture updated successfully ";
-
+                if (is_uploaded_file($filetemp)) {
+            
+                    if ($filesize < 2000000) {
+    
+                        $upload = move_uploaded_file($filetemp,$customer_pic_path);
+    
+                        $sessionEmail = $_SESSION['customeremail'];
+    
+                        if ($upload == 1) {
+                            
+                            $location = $customer_pic_path;
+    
+                            $pic_location_query = " UPDATE customerprofile
+                                                    SET customerpicdir = '$location'
+                                                    WHERE customeremail = '$sessionEmail';";
+    
+                            $passQuery = $this->mysqli->query($pic_location_query);
+    
+                            if ($passQuery) {
+    
+                                echo " Picture updated successfully ";
+    
+                            } else {
+                                echo " Picture update failed ". $sessionEmail . " " . $location;
+                            }
+    
+    
                         } else {
-                            echo " Picture update failed ";
+                            echo "Upload failed ";
                         }
-
-
+                        
+    
                     } else {
-                        echo "Upload failed";
+                        echo "Picture size too large";
                     }
                     
-
+    
                 } else {
-                    echo "Picture size too large";
+                    echo "Please upload a file";
                 }
-                
+    
+    
+
 
             } else {
-                echo "Please upload a file";
+                echo "please upload image file alone. (Only jpg,jpeg and png is allowed)";
             }
-
-
+            
         }
 
     }

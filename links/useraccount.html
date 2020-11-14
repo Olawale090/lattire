@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="../styles/style.css">
     
     <script type="module" async src="../script/useraccount.js"></script>
+
     <!-- <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDafIc3mPhBtjUcn1CY_BkRw1hGZBvGJ-Q&callback=initMap">
     </script> -->
 
     <script type="module" async src="../script/customerProfileSetup.js"></script>
+
     <title>User account settings</title>
+    
 </head>
 <body>
     <div class="navbar mainbar">
@@ -31,10 +34,11 @@
         <div class="right_menu">
             <li><img src="../assets/icons/042-menu.svg" alt="company icon" class="img menuicon user_account_menu_btn"></li>
             <li class="usericon">
-                <div class="userimg_container">  </div> 
+                <img src="../assets/icons/039-user.svg" alt="Avatar" class="userimg_container"> 
             </li>
             <li class="username padd pr_username"> Username</li>
-            <li class="padd"><a href="helpcenter.html" class="link">Help </a></li>
+            <li class="padd"><a href="helpcenter.html" class="link"> Help </a></li>
+            <li class="padd"><a href="../index.html" class="link"> Home </a></li>
         </div>
         
     </div>
@@ -55,7 +59,7 @@
     <section class="settings_section">
 
         <div class="user_first_profile">
-            <img src="../assets/pics/attractive-beautiful-beauty-206560.jpg" alt="User image" class="user_image">
+            <img src="../assets/icons/039-user.svg" alt="User image" class="user_image">
             <p>
                 <div class="user_info">Akindele Victoria</div><br>
                 <div class="user_city">Ibadan  </div> 
@@ -86,7 +90,7 @@
         <form action="" method="post" class="user_profile_form" enctype="multipart/form-data">
             <p>
                 <label for="">Upload new picture</label> <br>
-                <input type="file" name="customer_pic_dir" class="upload_btn">
+                <input type="file" name="customerpicdir" class="upload_btn">
                 <button class="edit_btn choosepic"> Choose new picture</button>
                 <button name="pic_dir_submit" class="change_btn uploadchange_btn">Change</button>
             </p>
@@ -94,6 +98,7 @@
             <p>
                 <label for="">Username</label> <br>
                 <input type="text" id="name_edit" name="username" class="form_username settings_input" placeholder="Please enter username" disabled>
+                <!-- <a href="../assets/icons/002-phone.svg" download="">download</a> -->
                 <button class="edit_btn edit_btn_username">Edit</button>
                 <button name="username_submit" class="username_submit change_btn">Change</button>
             </p>

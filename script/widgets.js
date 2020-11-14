@@ -64,7 +64,7 @@ var carousel = function(){
     this.slides = document.querySelector('.hero');
     this.nextBtn = document.querySelector('.next');
     this.prevBtn = document.querySelector('.previous');
-    this.images = ["background-bags-bows-1050244.jpg","bargain-blouse-bright-1078958.jpg","assorted-blurred-background-boutique-994523.jpg","adorable-animal-bow-1663409.jpg","bag-boutique-business-336372.jpg"];
+    this.images = ["background-bags-bows-1050244.jpg","bargain-blouse-bright-1078958.jpg","assorted-blurred-background-boutique-994523.jpg","adorable-animal-bow-1663409.jpg","bag-boutique-business-336372.jpg","IMG-20200630-WA0020.jpg","Striped Long Sleeve Crop Top & Skirt Sets (1).jpg"];
     this.counter = 0;
 }
 
@@ -106,3 +106,37 @@ var Carousel = new carousel();
     setInterval(function(){
         Carousel.nextslide()
     },3000);
+
+let signinValidation = function(){
+    this.signinBtn = document.querySelector(".signin_link");
+};
+
+signinValidation.prototype = {
+     
+    validateUserRegistration(){
+
+        let xhr = new XMLHttpRequest();
+            xhr.open('POST','php/customerCompleteData.php', true);
+            xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+            xhr.onload = ()=>{
+                if (xhr.status === 200) {
+                    
+                    let data = JSON.parse(xhr.responseText); 
+                    if(data.customername !== ""){
+                        this.signinBtn.style.display = "none";
+                    }
+                }
+            };
+
+            xhr.onerror = (error)=>{
+                console.error(error);
+            };
+
+            xhr.send();
+
+    },
+};
+
+let keepBtn = new signinValidation();
+keepBtn.validateUserRegistration();

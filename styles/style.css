@@ -403,6 +403,8 @@ li{
     margin-bottom: 20px;
     padding-top: 0.6em;
     background-color: white;
+    overflow-x: scroll;
+    scroll-snap-type: mandatory;
 }
 
 .card{
@@ -416,6 +418,7 @@ li{
     font-family: var(--main_fFamily);
     margin-left: 8.5px;
     transform: scale(0.9);
+    scroll-snap-align: center;
 }
 
 .product_pics{
@@ -429,9 +432,14 @@ li{
 }
 
 .product_full_details{
-    color: var(--minor_fColor);
     text-decoration: none;
-    font-weight: 400;
+    font-weight: bold;
+    color: red;
+}
+
+.button_holders{
+    display: grid;
+    grid-template: repeat(1,1fr)/repeat(2,1fr);
 }
 
 .btn{
@@ -452,13 +460,12 @@ li{
 } */
 
 .price{
-    background-color: #FBC04C;
-    width:7em;
 
+    background-color: #FBC04C;
+    
 }
 
 .product_cart{
-    width: 12em;
     background-color: black;
     color: white;
     margin-left: 0.5em;
