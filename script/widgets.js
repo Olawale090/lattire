@@ -123,8 +123,11 @@ signinValidation.prototype = {
                 if (xhr.status === 200) {
                     
                     let data = JSON.parse(xhr.responseText); 
+
                     if(data.customername !== ""){
+
                         this.signinBtn.style.display = "none";
+                        
                     }
                 }
             };

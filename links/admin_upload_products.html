@@ -6,14 +6,15 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/signup.css">
     <link rel="stylesheet" href="../styles/login.css">
-    <link rel="stylesheet" href="../styles/adminpage.css">
+
     <link rel="stylesheet" href="../styles/useraccount.css">
     <link rel="stylesheet" href="../styles/admin_upload_products.css">
+    <link rel="stylesheet" href="../styles/adminpage.css">
 
-    <script type="module" async src="../script/adminaccount.js"></script>
+    <script type="module" async src="../script/admin_upload_products.js"></script>
 
     <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
-    <title>Upload products</title>
+    <title> Upload products </title>
 </head>
 <body>
     <div class="navbar mainbar">
@@ -22,7 +23,7 @@
             <img src="../assets/icons/companyicon.svg" alt="company icon" class="img mainIcon">
         </div>
 
-        <div class="right_menu">
+        <div class="right_menu" style="width: 70%; margin-left:30%;">
             <li><img src="../assets/icons/042-menu.svg" style="margin-top: 0.25em; margin-right:1em;" alt="company icon" class="img menuicon admin_account_menu_btn"></li>
             <li class="admin_icon">
                 <div class="admin_img_container">  </div> 
@@ -53,62 +54,67 @@
     <section class="upload_prod_form_container">
 
         <div class="user_first_profile">
-            <img src="../product_pics/blue-background-close-up-clothing-1579063.jpg" alt="User image" class="user_image">
+            <img src="../product_pics/blue-background-close-up-clothing-1579063.jpg" alt="User image" class="user_image product_image_uploaded">
             <p>
-                <label for="" style="margin-left: 1em;">Upload new picture</label> <br>
-                <input type="file" class="upload_btn"  style="margin-left: 0;">
-                <button class="edit_btn choosepic"> Choose new picture</button>
-                <button class="change_btn uploadchange_btn">Change</button>
+
+                <form action="" method="post" class="image_submission">
+                    <label for="" style="margin-left: 1em;">Upload new picture</label> <br>
+                    <input type="file" name ="product_picture" class="upload_btn"  style="margin-left: 0;">
+                    <button class="edit_btn choosepic"> Choose new picture</button>
+                    <button class="change_btn uploadchange_btn">Change</button>
+                </form>
+                
             </p>
         </div>
 
 
-        <form action="" method="post" class="user_profile_form">
+        <form action="" method="post" class="user_profile_form product_upload_form">
 
             <p>
                 <label for="">Product category</label> <br>
-                <input type="text" class="username settings_input" placeholder="Please enter product category">
+                <input type="text" name="product_category" class="product_category settings_input" placeholder="Please enter product category">
             </p>
 
             <p>
                 <label for="">Product name</label> <br>
-                <input type="text" class="email settings_input" placeholder="Please enter product name">
+                <input type="text" name="product_name" class="product_name settings_input" placeholder="Please enter product name">
             </p>
 
             <p>
                 <label for="">Product details</label> <br>
-                <input type="text" class="phone settings_input" placeholder="Please enter your product details">
+                <input type="text" name="product_details" class="product_details settings_input" placeholder="Please enter your product details">
             </p>
             
             <p>
                 <label for="">Product price</label> <br>
-                <input type="text" class="private_pass settings_input" placeholder="Please enter your product price">
+                <input type="text" name="product_price" class="product_price settings_input" placeholder="Please enter your product price">
             </p>
             
             <p>
                 <label for="">Product quantity</label> <br>
-                <input type="text" class="country settings_input" placeholder="Please enter product quantity">
+                <input type="text" name="product_quantity" class="product_quantity settings_input" placeholder="Please enter product quantity">
             </p> 
             
             <p>
                 <label for="">Dress type</label> <br>
-                <input type="text" class="country settings_input" placeholder="Choose either Unisex, Male or Female">
+                <input type="text" name="dress_type" class="Dress_type settings_input" placeholder="Choose either Unisex, Male or Female">
             </p>
 
             <p>
                 <label for="">Dress size</label> <br>
-                <input type="text" class="country settings_input" placeholder="Choose either XXL,XL,L,Slim fit">
+                <input type="text" name="dress_size" class="Dress_size settings_input" placeholder="Choose either XXL,XL,L,Slim fit">
             </p>
 
             <p>
                 <label for="">Dress material</label> <br>
-                <input type="text" class="country settings_input" placeholder="Please enter dress material">
+                <input type="text" name="dress_material" class="Dress_material settings_input" placeholder="Please enter dress material">
             </p>
 
             <p>
                 <label for="">Dress maker</label> <br>
-                <input type="text" class="country settings_input" placeholder="Please enter product manufacturer">
+                <input type="text" name="dress_maker" class="Dress_maker settings_input" placeholder="Please enter product manufacturer">
             </p>
+
             <button type="submit" class="upload_submit_btn" style="border-radius:0.2em;">Upload product</button>
         </form>
     </section>

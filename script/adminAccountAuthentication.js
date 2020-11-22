@@ -89,7 +89,7 @@ adminaccount.prototype = {
                     
                     this.notification.innerHTML = xhr.responseText;
 
-                    if(this.notification.innerHTML === "Picture uploaded successfully"){
+                    if(xhr.responseText === "Picture uploaded successfully"){
 
                         window.open("../adminlogin.html","_blank");
 

@@ -79,7 +79,6 @@ customerProfileSettings.prototype = {
                     userCity.innerHTML = data.customercity;
                     deliveryLocationAddress.innerHTML = data.customerlocation;
 
-                    // this.navbarImageContainer.style.backgroundImage = `url('${data.customerpicdir}')`;
                     this.navbarImageContainer.src = data.customerpicdir;
 
                 }
@@ -145,9 +144,6 @@ customerProfileSettings.prototype = {
 
             let xhr = new XMLHttpRequest();
             xhr.open('POST','../php/customerpicupload.php', true);
-            // xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-
-            console.log(xhr);
 
             xhr.onload = ()=>{
                 if (xhr.status === 200) {

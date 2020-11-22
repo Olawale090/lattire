@@ -38,7 +38,7 @@ customerForms.prototype ={
 
                             window.open('../index.html','_self');
                             this.notification.innerHTML = "Login Successful";
-                            this.nofification.style.color = "#4675f8";
+                            this.notification.style.color = "green";
 
 
                         } else {

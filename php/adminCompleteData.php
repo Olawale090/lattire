@@ -15,10 +15,11 @@
             $passQuery = $this->mysqli->query($query,MYSQLI_USE_RESULT);
             $fetchAllData = $passQuery->fetch_array(MYSQLI_ASSOC);
 
-            // $_SESSION['admin_name'] = $fetchAllData['customername'];
-
             if ($fetchAllData) {
+
                 echo json_encode($fetchAllData);
+            }else{
+                echo "error occured ";
             }
         }
     }
