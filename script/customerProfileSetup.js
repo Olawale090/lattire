@@ -31,20 +31,6 @@ const customerProfileSettings = function () {
     this.editBtnCity = document.querySelector(".edit_btn_city");
     this.editBtnLocation = document.querySelector(".edit_btn_location");
 
-    
-    //STORAGE
-    this.storedName = localStorage.getItem('customerName');
-    this.storedEmail = localStorage.getItem('customerEmail');
-    this.storedPhoneNo = localStorage.getItem('customerPhoneNo');
-    this.storedPicDir = localStorage.getItem('customerPicDir');
-    this.storedCountry = localStorage.getItem('customerCountry');
-    this.storedState = localStorage.getItem('customerState');
-    this.storedCity = localStorage.getItem('customerCity');
-    this.storedLocation = localStorage.getItem('customerLocation');
-    this.storedPrivatePass = localStorage.getItem('privatePassword');
-    this.storedUpdateTime = localStorage.getItem('updatetime');
-    this.storedPassword = localStorage.getItem('customerPassword');
-
 };
 
 customerProfileSettings.prototype = {
@@ -248,6 +234,10 @@ customerProfileSettings.prototype = {
             };
 
             xhr.send(param);
+            
+            setTimeout(()=>{
+                customerProfile.loadAllData();
+            }, 1000);
 
         });
     },
@@ -485,3 +475,4 @@ customerProfile.countryUpdate();
 customerProfile.stateUpdate();
 customerProfile.cityUpdate();
 customerProfile.locationUpdate();
+

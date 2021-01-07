@@ -14,8 +14,10 @@ usercartdata.prototype = {
                 if (xhr.status === 200) {
                     
                     let data = JSON.parse(xhr.responseText);
+                    
                     this.username.textContent = data.customername;
-                    // this.userimage = data.customername;
+                    this.userimage.style.backgroundImage =`url(${data.customerpicdir})`;
+                    this.userimage.style.backgroundSize = 'cover';
 
                 }
             };

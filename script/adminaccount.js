@@ -28,6 +28,7 @@ admin_widgets.prototype = {
 
     adminLoadData(){
         window.onload = ()=>{
+            
             let xhr = new XMLHttpRequest();
             xhr.open('POST','../php/adminCompleteData.php', true);
             xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
@@ -49,7 +50,9 @@ admin_widgets.prototype = {
             };
 
             xhr.onerror = (error)=>{
+
                 console.error("error found ",error);
+
             };
 
             xhr.send();

@@ -1,6 +1,6 @@
-"use strict";
+"use strict";"use strict";
 
-var administrator_uploads = function(){
+var administrator_update = function(){
     this.category = document.querySelector(".product_category");
     this.name = document.querySelector(".product_name");
     this.details = document.querySelector(".product_details");
@@ -11,7 +11,7 @@ var administrator_uploads = function(){
     this.material = document.querySelector(".Dress_material");
     this.maker = document.querySelector(".Dress_maker");
 
-    this.productUploadBtn = document.querySelector(".upload_submit_btn");
+    this.productUpdateBtn = document.querySelector(".update_submit_btn");
     this.productImageContainer = document.querySelector(".product_image_uploaded");
     this.imageUploadBtn = document.querySelector(".upload_btn");
 
@@ -21,7 +21,7 @@ var administrator_uploads = function(){
     this.list = document.querySelector(".admin_account_list");
 };
 
-administrator_uploads.prototype = {
+administrator_update.prototype = {
 
     display_toggle(){
         this.menu.addEventListener('click',() => {
@@ -42,23 +42,8 @@ administrator_uploads.prototype = {
         })
     },
 
-    chooseProductImage(){
-        this.imageUploadBtn.addEventListener('change',(event)=>{
-            
-            event.preventDefault();
-            let reader = new FileReader();
-
-            reader.onload = ()=>{
-                let pictureResult = reader.result;
-                this.productImageContainer.src = pictureResult;
-            
-            };
-
-            reader.readAsDataURL(this.imageUploadBtn.files[0]);
-        })
-    },
-
     adminLoadData(){
+
         window.onload = ()=>{
 
             let xhr = new XMLHttpRequest();
@@ -69,6 +54,7 @@ administrator_uploads.prototype = {
             let admin_username = document.querySelector(".username");
 
             xhr.onload = ()=>{
+
                 if (xhr.status === 200) {
                     let data = JSON.parse(xhr.responseText);
                     console.log(data);
@@ -77,6 +63,7 @@ administrator_uploads.prototype = {
                     admin_pic_holder.style.backgroundImage = `url('${data.adminpicdir}')`;
 
                 }
+
             };
 
             xhr.onerror = (error)=>{
@@ -87,55 +74,9 @@ administrator_uploads.prototype = {
         };
     },
 
-    productPictureUpload(){
-        let changeBtn = document.querySelector(".uploadchange_btn");
-        changeBtn.addEventListener('click',(event)=>{
-            
-            event.preventDefault();
+    updateProduct(){
 
-            let xhr = new XMLHttpRequest();
-            xhr.open("POST","../php/productPicUpload.php",true);
-
-            let form = document.querySelector(".image_submission");
-            let formData = new FormData(form);
-
-            xhr.onload = ()=>{
-                try {
-                    console.log(xhr.status);
-
-                    if(xhr.status === 200){
-
-                        alert(xhr.responseText);
-    
-                    }else if (xhr.status === 404){
-    
-                        alert("PAGE NOT FOUND");
-    
-                    }else{
-    
-                        alert("Error occured");
-                        console.log(xhr.status);
-                        
-                    }
-
-                } catch (error) {
-
-                    console.log(error);
-
-                } 
-                
-            };
-
-            xhr.onerror = (e)=>{
-                console.error("Error found ", e);
-            };
-
-            xhr.send(formData);
-        });
-    },
-
-    uploadProduct(){
-        this.productUploadBtn.addEventListener('click',(event)=>{
+        this.productUpdateBtn.addEventListener('click',(event)=>{
 
             event.preventDefault();
 
@@ -144,7 +85,7 @@ administrator_uploads.prototype = {
             &dress_size=${this.size.value}&dress_material=${this.material.value}&dress_maker=${this.maker.value}`;
 
             let xhr = new XMLHttpRequest();
-            xhr.open('POST','../php/admin_product_upload.php', true);
+            xhr.open('POST','../php/admin_update_product.php', true);
             xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 
             // let form = document.querySelector(".product_upload_form");
@@ -153,7 +94,8 @@ administrator_uploads.prototype = {
 
             xhr.onload = ()=>{
                 if (xhr.status === 200) {
-
+                    
+                    console.log(this.name);
                     alert(xhr.responseText);
                     console.log(xhr.responseText);
 
@@ -177,9 +119,7 @@ administrator_uploads.prototype = {
     }
 };
 
-var adminProductUpload = new administrator_uploads();
+var adminProductUpload = new administrator_update();
 adminProductUpload.display_toggle();
-adminProductUpload.chooseProductImage();
 adminProductUpload.adminLoadData();
-adminProductUpload.uploadProduct();
-adminProductUpload.productPictureUpload();
+adminProductUpload.updateProduct();

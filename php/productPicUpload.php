@@ -4,13 +4,19 @@
     class product_picture_upload
     {
         public function __construct(){
+
             $this->mysqli = new mysqli('localhost','root','','lattire');
+
         }
 
         public function database_connection(){
+
             if (mysqli_connect_errno()) {
+
                 echo " Connection failed, please try again ";
+
             }
+
         }
 
         public function upload_pic(){
@@ -18,6 +24,7 @@
             $filesize = $_FILES['product_picture']['size'];
             $filename = $_FILES['product_picture']['name'];
             $filetemp = $_FILES['product_picture']['tmp_name'];
+            $fileerror = $_FILES['product_picture']['error'];
 
             $product_pic_path = "../product_categories/".$_SESSION['product_category_name']."/".$_SESSION['product_name']."/".$filename;
             $file_extension = explode(".",$filename);
@@ -29,13 +36,13 @@
                 
                 if (is_uploaded_file($filetemp)) {
             
-                    if ($filesize < 2000000) {
+                    if ($filesize < 5000000) {
     
-                        $upload = move_uploaded_file($filetemp,$product_pic_path);
+                        $upload = move_uploaded_file($filetemp, $product_pic_path);
     
                         $productName = $_SESSION['product_name'];
     
-                        if ($upload == 1) {
+                        if ( $upload == 1 ) {
                             
                             $location = $product_pic_path;
 
@@ -50,17 +57,21 @@
                                 echo " Picture uploaded successfully ";
     
                             } else {
+
                                 echo " Picture upload failed ";
+
                             }
     
     
                         } else {
-                            echo " Upload failed ";
+
+                            echo " Upload failed " . $product_pic_path;
+
                         }
                         
     
                     } else {
-                        echo "Picture size too large";
+                        echo " Picture size too large ";
                     }
                     
     
@@ -72,7 +83,7 @@
 
 
             } else {
-                echo "please upload image file alone. (Only jpg,jpeg and png is allowed)";
+                echo "please upload image file alone. (Only jpg,jpeg and png is allowed) " . $productName;
             }
             
         }

@@ -7,6 +7,8 @@ const menu = function(){
     this.removeFromCart = document.querySelector(".removefromcart");
     this.delivery = document.querySelector(".delivery");
     this.bullets = document.querySelector(".bullets");
+
+    this.signinBtn = document.querySelector(".signin_link");
 }
 
 menu.prototype = {
@@ -119,3 +121,42 @@ helpcenterMenu.refundTab();
 helpcenterMenu.addToCartTab();
 helpcenterMenu.deliveryTab();
 helpcenterMenu.removeFromCartTab();
+
+let signinValidation = function(){
+    this.signinBtn = document.querySelector(".signin_link");
+};
+
+signinValidation.prototype = {
+     
+    validateUserRegistration(){
+
+        let xhr = new XMLHttpRequest();
+            xhr.open('POST','../php/customerCompleteData.php', true);
+            xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+            xhr.onload = ()=>{
+                if (xhr.status === 200) {
+                    
+                    let data = JSON.parse(xhr.responseText); 
+
+                    if(data.customername !== ""){
+
+                        this.signinBtn.style.display = "none";
+                        
+                    }
+
+                    console.log(data);
+                }
+            };
+
+            xhr.onerror = (error)=>{
+                console.error(error);
+            };
+
+            xhr.send();
+
+    },
+};
+
+let keepBtn = new signinValidation();
+keepBtn.validateUserRegistration();

@@ -37,7 +37,7 @@ class admin_registration
                     if ($username && $email && $password) {
 
                         $admin_exist_query = "SELECT * FROM adminaccount 
-                                                WHERE email = '$email'";
+                                              WHERE email = '$email'";
 
                         $admin_exist_passQuery = $this->mysqli->query($admin_exist_query, MYSQLI_USE_RESULT);
 

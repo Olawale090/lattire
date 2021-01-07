@@ -1,15 +1,14 @@
 "use strict";
-import { usercartdata } from "./usercart.js";
-
-let customerdata = new usercartdata();
-document.onload = customerdata.navbardata();
-console.log(customerdata);
-
 
 export const delivery = function (){
+    this.name = document.querySelector(".username");
     this.address = document.querySelector(".customeraddressdata");
+
     // this.deliveryInterval;
+
     this.pickpoints = document.querySelector(".pickpointsdata");
+    this.userimage = document.querySelector(".userimg_container");
+
 };
 
 delivery.prototype = {
@@ -22,9 +21,18 @@ delivery.prototype = {
                 if (xhr.status === 200) {
                     
                     let data = JSON.parse(xhr.responseText);
+                    
+                    this.name.textContent = data.customername;
                     this.address.textContent = data.customerlocation;
-                    // this.pickpoints.textContent = data.customerlocation;
-                    // this.userimage = data.customername;
+                    this.pickpoints.textContent = data.customerlocation;
+                    this.userimage.style.backgroundImage = `url(${data.customerpicdir})`;
+                    this.userimage.style.backgroundSize = 'cover';
+
+                    if(data.customername !== ""){
+
+                        this.signinBtn.style.display = "none";
+                        
+                    }
 
                 }
             };
@@ -40,4 +48,3 @@ delivery.prototype = {
 
 let deliverydata = new delivery();
 document.onload = deliverydata.deliverytab();
-console.log(deliverydata);

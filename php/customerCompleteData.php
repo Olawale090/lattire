@@ -7,7 +7,7 @@
     // }
 
     // class customerdata implements Icustomerdata
-    class customerdata 
+    class customerdata
     {
         public function __construct(){
             $this->mysqli = new mysqli('localhost','root','','lattire');
