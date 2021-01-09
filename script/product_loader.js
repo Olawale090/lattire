@@ -4,9 +4,12 @@ const main_product_loader = function(){
 
     this.firstBatch = document.querySelector(".first_batch");
     this.categoryTitle = document.querySelector(".category_title");
+    this.product_carrier = document.querySelector(".category");
 
     this.secondBatch = document.querySelector(".second_batch");
     this.categoryTitle2 = document.querySelector(".category_title2");
+
+    this.scroller = document.querySelector(".product_scroll");
 
 };
 
@@ -24,19 +27,7 @@ main_product_loader.prototype = {
                 
                 if (xhr.status === 200) {
 
-                    let section = document.createElement('section');
-                    section.setAttribute('class', 'category card');
-
-                    let scroller = document.createElement('div');
-                    scroller.setAttribute('class','product_scroll');
-
-                    this.firstBatch.appendChild(section);
-                    section.appendChild(scroller);
-
                     let data = JSON.parse(xhr.responseText);
-
-                    console.log(data);
-                    
 
                     for (let i = 0; i < data.length; i++) {
 
@@ -46,7 +37,7 @@ main_product_loader.prototype = {
                         this.categoryTitle.innerHTML = `${data[i].product_category}`;
 
 
-                        scroller.innerHTML += `
+                        this.scroller.innerHTML += `
 
                             <div class="product_tag">
                                 <img src="${newpath}" alt="product image" class="product_pics">
@@ -63,7 +54,6 @@ main_product_loader.prototype = {
                                     </button>
                                 </footer>
                             </div> 
-                        
                         
                         `;
                         
@@ -177,37 +167,87 @@ loader.fetchSecondProductSection();
 
 const product_slide = function(){
 
-    this.product_carrier = document.querySelector(".category");
+    this.first_categ_carrier = document.getElementById("first_categ");
+    this.first_right_scroll = document.getElementById("first_categ_rightBtn");
+    this.first_left_scroll = document.getElementById("first_categ_leftBtn");
 
-    this.right_scroll = document.querySelector(".right_scroll");
+    this.second_right_scroll = document.getElementById("second_categ_rightBtn");
 
-    this.left_scroll = document.querySelector(".left_scroll");
+    this.third_categ_carrier = document.getElementById("third_categ");
+    this.third_right_scroll = document.getElementById("third_right_scroll");
+    this.third_left_scroll = document.getElementById("third_left_scroll");
 
 
 };
 
 product_slide.prototype = {
 
-    scroll_to_right(){
+    first_scroll_to_right(){
 
-        this.right_scroll.addEventListener('click',()=>{
-
-            // this.product_carrier.addEventListener('scroll',(event)=>{
-
-            //     console.dir(event);
-            //     console.dir(this.product_carrier);
+        console.dir(this.third_right_scroll);
     
-            // });
+        this.first_right_scroll.addEventListener('click',()=>{
 
-            this.product_carrier.scrollBy (20);
-            console.log(this.product_carrier.scrollBy());
+            // this.first_categ_carrier.scrollLeft +=400;
+            console.log("they are coming...");
+
+        });
+
+    },
+
+    first_scroll_to_left(){
+
+        this.first_left_scroll.addEventListener('click',()=>{
+            
+            this.first_categ_carrier.scrollLeft -=400;
+
+        });
+    },
+
+    second_scroll_to_right(){
+
+        console.dir(this.second_right_scroll);
+    
+        this.second_right_scroll.addEventListener('click',()=>{
+
+            // this.first_categ_carrier.scrollLeft +=400;
+            console.log("second button...");
+
+        });
+
+    },
+
+    third_scroll_to_right(){
+
+        this.third_right_scroll.addEventListener('click',()=>{
+
+            this.third_categ_carrier.scrollLeft +=400;
+
         });
         
+    },
+
+    third_scroll_to_left(){
+        this.third_left_scroll.addEventListener('click',()=>{
+
+            this.third_categ_carrier.scrollLeft -=400;
+
+        });
     }
 
 
 };
 
 const product_slider = new product_slide();
-product_slider.scroll_to_right();
+
+product_slider.first_scroll_to_right();
+product_slider.first_scroll_to_left();
+
+// product_slider.second_scroll_to_right();
+
+product_slider.third_scroll_to_right();
+product_slider.third_scroll_to_left();
+
+
+
 
