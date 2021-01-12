@@ -93,14 +93,7 @@ main_product_loader.prototype = {
                 
             if (xhr.status === 200) {
 
-                let section = document.createElement('section');
-                section.setAttribute('class', 'category card');
-
-                let scroller = document.createElement('div');
-                scroller.setAttribute('class','product_scroll');
-
-                this.secondBatch.appendChild(section);
-                section.appendChild(scroller);
+                let secondScroller = document.querySelector(".second_scroll");
 
                 let data = JSON.parse(xhr.responseText);
 
@@ -115,7 +108,7 @@ main_product_loader.prototype = {
                     this.categoryTitle2.innerHTML = `${data[i].product_category}`;
 
 
-                    scroller.innerHTML += `
+                    secondScroller.innerHTML += `
 
                         <div class="product_tag">
                             <img src="${newpath}" alt="product image" class="product_pics">
@@ -168,10 +161,10 @@ loader.fetchSecondProductSection();
 const product_slide = function(){
 
     this.first_categ_carrier = document.getElementById("first_categ");
-    this.first_right_scroll = document.getElementById("first_categ_rightBtn");
-    this.first_left_scroll = document.getElementById("first_categ_leftBtn");
+    this.first_right_scroll = document.querySelector("#first_right_scroll");
+    this.first_left_scroll = document.getElementById("first_left_scroll");
 
-    this.second_right_scroll = document.getElementById("second_categ_rightBtn");
+    this.secondRightScroll = document.getElementById("second_categ_rightBtn");
 
     this.third_categ_carrier = document.getElementById("third_categ");
     this.third_right_scroll = document.getElementById("third_right_scroll");
@@ -184,11 +177,12 @@ product_slide.prototype = {
 
     first_scroll_to_right(){
 
-        console.dir(this.third_right_scroll);
+        console.dir(this.first_right_scroll);
     
         this.first_right_scroll.addEventListener('click',()=>{
 
             // this.first_categ_carrier.scrollLeft +=400;
+            alert("yeah working...");
             console.log("they are coming...");
 
         });
@@ -206,9 +200,9 @@ product_slide.prototype = {
 
     second_scroll_to_right(){
 
-        console.dir(this.second_right_scroll);
+        console.dir(this.secondRightScroll);
     
-        this.second_right_scroll.addEventListener('click',()=>{
+        this.secondRightScroll.addEventListener('click',()=>{
 
             // this.first_categ_carrier.scrollLeft +=400;
             console.log("second button...");
@@ -243,7 +237,7 @@ const product_slider = new product_slide();
 product_slider.first_scroll_to_right();
 product_slider.first_scroll_to_left();
 
-// product_slider.second_scroll_to_right();
+product_slider.second_scroll_to_right();
 
 product_slider.third_scroll_to_right();
 product_slider.third_scroll_to_left();
