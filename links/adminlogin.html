@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
+    <script type="module" async src="../script/adminlogin.js"></script>
+
+    <title>Admin login page</title>
+</head>
+<body>
+    <div class="navbar mainbar">
+        <div class="left_menu">
+            <img src="../assets/icons/companyicon.svg" alt="company icon" class="img mainIcon">
+        </div>  
+
+        <div class="title" style="position: absolute; right:1em; font-size:1.5em; color:rgb(63, 63, 63);">Administrator Login</div>
+    </div>
+
+    <section class="login_form_container" style="height:auto; margin-top:5em; padding-bottom:0.5em ">
+        <form action="" method="post" class="form_plate">
+            <p>
+                <label for="">E-mail</label> <br>
+                <input type="text" name="admin_email" placeholder="Please enter email" class="input_email admin_email">
+            </p>
+
+            <p>
+                <label for="">Admin PIK </label> <br>
+                <input type="text" name="admin_personal_identification_key" placeholder="Please enter Admin PIK" class="input_password admin_pik">
+            </p>
+            
+            <p>
+                <label for="">Password</label> <br>
+                <input type="password" name="admin_password" placeholder="Please enter password" class="input_password admin_password">
+            </p>
+            
+
+            <p>
+                <input type="submit" name="" value="Submit" class="submit_btn">
+            </p> 
+
+            <a href="adminsignup.html"> <input type="button" class="sign_up" value="Create Admin Account"> </a>
+            
+
+            <footer class="notification"></footer>
+        </form>
+    </section>
+</body>
+</html>

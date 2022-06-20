@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/adminpage.css">
+
+    <script type="module" async src="../script/adminaccount.js"></script>
+
+    <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
+
+    <title>Administrator</title>
+
+</head>
+<body>
+    <div class="navbar mainbar">
+
+        <div class="left_menu">
+            <img src="../assets/icons/companyicon.svg" alt="company icon" class="img mainIcon">
+        </div>
+
+        <div class="right_menu" style="width: 70%; margin-left:30%;">
+            <li><img src="../assets/icons/042-menu.svg" style="margin-top: 0.25em; margin-right:1em;" alt="company icon" class="img menuicon admin_account_menu_btn"></li>
+            <li class="admin_icon">
+                <div class="admin_img_container">  </div> 
+            </li>
+            <li class="username padd pr_username" style="width: auto;"> Username</li>
+            <li class="padd" style="color:rgb(63, 63, 63);"> Administrator account </li>
+        </div>
+        
+    </div>
+
+    <div class="side_nav">
+
+        <div class="admin_img"></div>
+            <ul class="admin_actions">
+                <li><a href="admin_filter_customers.html" class="admin_action_links">Filters customers </a></li>
+                <li><a href="admin_filter_products.html" class="admin_action_links">Filter products </a></li>
+                <li><a href="admin_questions.html" class="admin_action_links">Quickly reply</a></li>
+                <li><a href="admin_manage_newsletter.html" class="admin_action_links">Customer account updates</a></li>
+                <li><a href="close_session" class="admin_action_links">Log out</a></li>
+            </ul>
+    </div>
+
+    <div class="admin_account_menu mobile_hide_toggle">
+        <li class="admin_account_list"><a href="admin_upload_products.html">Upload products </a></li>
+        <li class="admin_account_list"><a href="admin_update_product.html">Update products </a></li>
+        <li class="admin_account_list"><a href="lattire@gmail.com">E-mails received </a></li>
+        <li class="admin_account_list"><a href="paystacklattire.com">Payment issues </a></li>
+        <li class="admin_account_list"><a href="http://">Log out </a></li>
+    </div>
+
+    <div class="right_side_nav">
+        <a href="manageproduct.html" target="parent">
+            <li class="admin_tabs manage_products">
+                <img src="../assets/icons/043-bags.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab">Manage products</div>
+            </li>
+        </a>
+
+        <a href="admin_manage_newsletter.html">
+            <li class="admin_tabs manage_newsletter">
+                <img src="../assets/icons/038-announcement.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab">Manage newsletter</div>
+            </li>
+        </a>
+        
+        <a href="admin_active_customers.html">
+            <li class="admin_tabs active_customers">
+                <img src="../assets/icons/039-user black.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Active customers </div>
+            </li>
+        </a>
+        
+        <a href="admin_product_delivery.html">
+            <li class="admin_tabs">
+                <img src="../assets/icons/013-present.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Deliveries </div>
+            </li>
+        </a>
+        
+        <a href="admin_questions.html">
+            <li class="admin_tabs">
+                <img src="../assets/icons/010-delivery.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Questions </div>
+            </li>
+        </a>
+        
+        <a href="admin_inactive_customers.html">
+            <li class="admin_tabs">
+                <img src="../assets/icons/002-phone.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Inactive customers </div>
+            </li>
+        </a>
+        
+        <a href="admin_payment.html">
+            <li class="admin_tabs">
+                <img src="../assets/icons/045-payment-2.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Payments </div>
+            </li>
+        </a>
+        
+        <a href="http://">
+            <li class="admin_tabs">
+                <img src="../assets/icons/036-warning.svg" class="img_tab" alt="avatar">
+                <div class="mng_prd_tab"> Payment issues </div>
+            </li>
+        </a>
+        
+    </div>
+</body>
+</html>

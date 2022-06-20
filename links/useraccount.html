@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/useraccount.css">
+    <link rel="stylesheet" href="../styles/full_detail.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    
+    <script type="module" async src="../script/useraccount.js"></script>
+
+    <!-- <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDafIc3mPhBtjUcn1CY_BkRw1hGZBvGJ-Q&callback=initMap">
+    </script> -->
+
+    <script type="module" async src="../script/customerProfileSetup.js"></script>
+
+    <title>User account settings</title>
+    
+</head>
+<body>
+    <div class="navbar mainbar">
+
+        <div class="left_menu">
+            <img src="../assets/icons/companyicon.svg" alt="company icon" class="img mainIcon">
+        </div>
+
+        <input type="text" name="" id="" placeholder="Search products here" class="main_search useraccount_main_search">
+        <ul class="search_results" style="top: 2.2em;">
+            <li class="search_list"> Products </li>
+        </ul>
+
+        <div class="right_menu">
+            <li><img src="../assets/icons/042-menu.svg" alt="company icon" class="img menuicon user_account_menu_btn"></li>
+            <li class="usericon">
+                <img src="../assets/icons/039-user.svg" alt="Avatar" class="userimg_container"> 
+            </li>
+            <li class="username padd pr_username"> Username</li>
+            <li class="padd"><a href="helpcenter.html" class="link"> Help </a></li>
+            <li class="padd"><a href="../index.html" class="link"> Home </a></li>
+        </div>
+        
+    </div>
+
+    <div class="user_account_menu mobile_hide_toggle">
+        <li class="user_account_menu_list"><a href="delivery.html"> Delivery </a></li>
+        <li class="user_account_menu_list"><a href="customer_questions.html"> Questions </a></li>
+        <li class="user_account_menu_list"><a href="helpcenter.html"> Payment Issues </a></li>
+        <li class="user_account_menu_list"><a href="useraccount.html"> Profile </a></li>
+        <li class="user_account_menu_list"><a href="../index.html" class="customer_logout"> Log out </a></li>
+    </div>
+
+    <div class="pagetitle">
+        <img src="../assets/icons/013-settings.svg" alt=" settings" class="settings_icon"> 
+        <li class="settings_head"> User profile settings </li>
+    </div>
+
+    <section class="settings_section">
+
+        <div class="user_first_profile">
+            <img src="../assets/icons/039-user.svg" alt="User image" class="user_image">
+            <p>
+                <div class="user_info">Akindele Victoria</div><br>
+                <div class="user_city">Ibadan  </div> 
+
+                <div class="user_delivery_city">
+
+                    <div class="delivery_date_title">
+                        Delivery date:  
+                    </div>
+
+                    <div class="delivery_date_day">
+                        5<sup>th</sup> of August, 2020
+                    </div>
+
+                    <div class="delivery_location_title">
+                        Delivery location:  
+                    </div>
+
+                    <div class="delivery_location_address">
+                        Bodija garage, No.45 post office Oyo state 
+                    </div>
+
+                </div> 
+                
+            </p>
+        </div>
+
+        <form action="" method="post" class="user_profile_form" enctype="multipart/form-data">
+            <p>
+                <label for="">Upload new picture</label> <br>
+                <input type="file" name="customerpicdir" class="upload_btn">
+                <button class="edit_btn choosepic"> Choose new picture</button>
+                <button name="pic_dir_submit" class="change_btn uploadchange_btn">Change</button>
+            </p>
+
+            <p>
+                <label for="">Username</label> <br>
+                <input type="text" id="name_edit" name="username" class="form_username settings_input" placeholder="Please enter username" disabled>
+                <!-- <a href="../assets/icons/002-phone.svg" download="">download</a> -->
+                <button class="edit_btn edit_btn_username">Edit</button>
+                <button name="username_submit" class="username_submit change_btn">Change</button>
+            </p>
+
+            <p>
+                <label for="">Email</label> <br>
+                <input type="text" name="email" class="email settings_input" placeholder="Please enter your email"  disabled>
+                <button class="edit_btn edit_btn_email">Edit</button>
+                <button name="email_submit" class="email_submit change_btn">Change</button>
+            </p>
+
+            <p>
+                <label for="">Phone Number</label> <br>
+                <input type="text" name="phone_number" class="phone settings_input" placeholder="Please enter your phone number" disabled>
+                <button class="edit_btn edit_btn_phoneNo">Edit</button>
+                <button name="phoneno_submit" class="phoneno_submit change_btn">Change</button>
+            </p>
+            
+            <p>
+                <label for="">Private password</label> <br>
+                <input type="text" name="private_password" class="private_pass settings_input" placeholder="Please enter your private password" disabled>
+                <button class="edit_btn edit_btn_private_password">Edit</button>
+                <button name="privatepassword_submit" class="privatepassword_submit change_btn">Change</button>
+            </p>
+            
+            <p>
+                <label for="">Country</label> <br>
+                <input type="text" name="country" class="country settings_input" placeholder="Please enter country" disabled>
+                <button class="edit_btn edit_btn_country">Edit</button>
+                <button name="country_submit" class="country_submit change_btn">Change</button>
+            </p>
+
+            <p>
+                <label for="">State</label> <br>
+                <input type="text" name="state" class="state settings_input" placeholder="Please enter state" disabled>
+                <button class="edit_btn edit_btn_state">Edit</button>
+                <button name="state_submit"  class="state_submit change_btn">Change</button>
+            </p>
+            
+            <p>
+                <label for="">City</label> <br>
+                <input type="text" name="city" class="city settings_input" placeholder="Please enter city" disabled>
+                <button class="edit_btn edit_btn_city">Edit</button>
+                <button name="city_submit" class="city_submit change_btn">Change</button>
+            </p>
+
+
+            <p>
+                <label for=""> Location </label> <br>
+                <input type="text" name="location" class="user_location settings_input" placeholder="change your location" disabled>
+                <button class="edit_btn edit_btn_location">Edit</button> 
+                <button name="location_submit" class="location_submit change_btn">Change</button>
+            </p>
+        
+        </form>
+    </section>
+
+    <section id='map' class="googlemap_delivery">
+        <h1>Google map here</h1>
+    </section>
+
+    <footer class="main_footer">
+        <ul class="block1">
+            <p>
+                <li>
+                    <h3>Head office:</h3>
+                    No. 23 Dr. Akintunde Babatunde Alade street <br>
+                    Opposite Adekunle Christoper crescent, <br>
+                    Idumota, Lagos state, Nigeria. <br>
+                    +2348168612448,+2348050967907 <br>
+                </li> 
+            </p>
+
+            <p>
+                <li>Customer care line: <br>
+                    +2348100049454 <br>
+                    +2349030299483 <br>
+                    +2348068402794 <br>
+                    <p>
+                        OR chat us up <br>
+                        <a href="">url</a> <br>
+                    </p>
+                    
+                </li>
+            </p>
+            <li>Email:lattirefeedback@lattire.com</li>
+            <li>&copy; lattire2020</li>
+        </ul>
+
+        <ul class="block2">
+            <li>Latest products</li>
+            <li>General products</li>
+            <li>Men wears</li>
+            <li>Women wears</li>
+            <li>Sport wears</li>
+            <li>Roundnecks</li>
+            <li>T-shirts</li>
+            <li>Trousers</li>
+            <li>Skirts</li>
+            <li>Jackets</li>
+        </ul>
+
+        <ul class="block3">
+            <li>Sign in</li>
+            <li> Sign up</li>
+            <li> About us</li>
+            <li> Contact us</li>
+            <li> Cart</li>
+            <li>Blog</li>
+            <li>Help</li>
+            <li>Questions</li>
+            <li>Deliveries</li>
+            <li>Log out</li>
+        </ul>
+
+        <ul class="block4">
+            <p>
+                <li>
+                    <h3>Nigeria office:</h3>
+                    No. 23 Dr. Akintunde Babatunde Alade street <br>
+                    Opposite Adekunle Christoper crescent, <br>
+                    Idumota, Lagos state, Nigeria. <br>
+                    +2348168612448,+2348050967907 <br>
+                </li> 
+            </p>
+
+            <p>
+                <li>Customer care line: <br>
+                    +2348100049454 <br>
+                    +2349030299483 <br>
+                    +2348068402794 <br>
+                    <p>
+                        OR chat us up <br>
+                        <a href="">url</a> <br>
+                    </p>
+                    
+                </li>
+            </p>
+            <li>Email:lattirefeedback@lattire.com</li>
+        </ul>
+    </footer>
+
+    <script>
+        function initMap() {
+            // The location of Uluru
+            var uluru = {lat:6.465422, lng: 3.406448 };
+            // The map, centered at Uluru
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 10, center: uluru});
+            // The marker, positioned at Uluru
+            var marker = new google.maps.Marker({position: uluru, map: map});
+
+            var infoWindow = new google.maps.InfoWindow;
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function(p){
+                    
+                    var position = {
+                        lat:p.coords.latitude,
+                        lng:p.coords.longitude
+                    };
+
+                    infoWindow.setPosition(position);
+                    infoWindow.setContent('Your location');
+                    infoWindow.open(map);
+                },function(){
+                    handleLocationError('geolocation failed',map.center());
+                });
+            }else{
+                handleLocationError('no geolocation available in your browser',map.center())
+            }
+
+            function handleLocationError(content,position){
+                infoWindow.setPosition(position);
+                infoWindow.setContent(content);
+                infoWindow.open(map);
+            }
+
+          }
+        
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDafIc3mPhBtjUcn1CY_BkRw1hGZBvGJ-Q&callback=initMap">
+    </script>
+</body>
+</html>

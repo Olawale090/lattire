@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
+    <script type="module" async src="../script/customerRegister.js"></script>
+    <title>Sign up</title>
+</head>
+<body>
+    <div class="navbar mainbar">
+        <div class="left_menu">
+            <img src="../assets/icons/companyicon.svg" alt="company icon" class="img mainIcon">
+        </div>  
+    </div>
+
+    <section class="form_container">
+        <form action="" method="post" class="form_plate">
+
+            <p>
+                <label for="">Username</label> <br>
+                <input type="text" name="username" placeholder="Please enter username" class="input_username">
+            </p>
+
+            <p>
+                <label for="">E-mail</label> <br>
+                <input type="text" name="email" placeholder="Please enter email" class="input_email">
+            </p>
+            
+            <p>
+                <label for="">Password</label> <br>
+                <input type="password" name="passsword" placeholder="Please enter password" class="input_password">
+            </p>
+            
+            <p>
+                <label for="">Confirm password</label> <br>
+                <input type="password" name="confirm_password" placeholder="Please confirm password" class="confirm_input_password">
+            </p>
+
+            <p>
+                <input type="submit" name="submit" value="Submit" class="signup_btn submit_btn">
+            </p> 
+
+            <p>
+                <input type="submit" name="facebook" placeholder="Confirm password" value="Sign up with facebook" class="facebook_btn">
+            </p>
+
+            <label for="" class="account_label">Have an account?</label><a href="login.html" class="sign_in"> Sign in</a>
+
+            <footer class="notification"></footer>
+        </form>
+    </section>
+</body>
+</html>

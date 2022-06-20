@@ -1,0 +1,137 @@
+
+.admin_img_container{
+    background-color: whitesmoke;
+    background-size: cover;
+    margin-top: -0.5em;
+    border-radius: 10em;
+    height: 3em;
+    width: 3em;
+}
+
+.admin_account_menu{
+    position: fixed;
+    background-color: white;
+    padding: 0.2em;
+    top: 3em;
+    right: 1em;
+    width: 15em;
+    text-align: center;
+    box-shadow: 0.1em 0.1em 0.5em 0.05em gray;
+    z-index: 2;
+    pointer-events: all;
+} 
+
+.admin_account_list{
+    font-family: 'Segoe UI';
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.5em;
+    cursor: pointer;
+    transition:0.2s;
+}
+
+.admin_account_list>a{
+    color: black;
+}
+
+.admin_account_list:hover{
+    background-color: whitesmoke;
+}
+
+.side_nav{
+    height:92%;
+    width: 20%;
+    top: 8%;
+    background-color: #FBC04C;
+    position: absolute;
+}
+
+.right_side_nav{
+    display: grid;
+    grid-template:repeat(2,10em)/repeat(4,10em);
+    width: 79%;
+    margin-top: 3.5%;
+    margin-left: 21%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+    padding:5em;
+    background-color: rgba(255, 255, 255, 0.842);
+}
+
+.right_side_nav>a{
+    text-decoration: none;
+    color:black;
+    outline: none;
+}
+
+.right_side_nav>a:focus>li{
+    border: solid #4c5efb 0.1em;
+}
+
+
+.admin_img{
+    width: 6em;
+    height: 6em;
+    background-color: white;
+    border-radius: 5em;
+    margin-left: 4.8em;
+    margin-top: 1em;
+    background-image: url('../assets/pics/attractive-beautiful-beauty-206560.jpg');
+    background-size: cover;
+}
+
+.admin_actions{
+    width: 100%;
+    font-family: 'Segoe UI';
+    font-size: 1.1em;
+    color: black;
+    font-weight: 400;
+}
+
+.admin_actions>li{
+    padding: 0.5em;
+}
+
+.admin_action_links{
+    transition: 0.2s;
+    text-decoration: none;
+    color: black;
+}
+
+.admin_action_links:hover{
+    color: white;
+}
+
+.admin_tabs{
+    width: 10em; 
+    height:10em;
+    border:solid#FBC04C 1px;
+    border-radius: 0.1em;
+    font-family: 'Segoe UI';
+    font-size: 1em;
+    transition: 0.2s;
+    outline: none;
+}
+
+.admin_tabs:hover{
+    background-color:#FBC04C;
+    cursor: pointer;
+}
+
+a:focus + li{
+    border:solid#4c5efb 1px;
+}
+
+.img_tab{
+    height:80px;
+    margin-top: 1.5em; 
+    margin-left:2.5em;
+}
+
+.mng_prd_tab{
+    width: 100%; 
+    text-align:center; 
+    margin-top:1em;
+}

@@ -1,0 +1,33 @@
+.upload_prod_form_container{
+    height: 33em;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar-button{
+    background-color: red;
+}
+
+.admin_return_table{
+    width: 80em;
+    margin-left: 1em;
+    font-family: 'Segoe UI';
+    font-size: 1rem;
+}
+
+#first_row{
+    background-color: #FBC04C;
+    margin: 0;
+}
+
+tr{
+    height: 3em;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(218, 218, 218);
+    border-collapse: separate;
+}
+
+td{
+    text-align: center;
+}

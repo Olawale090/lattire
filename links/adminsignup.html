@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/admin_signup.css">
+    <link rel="stylesheet" href="../styles/login.css">
+
+
+    <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
+
+    <script type="module" async src="../script/adminAccountAuthentication.js"></script>
+
+    <title>Administrator Registar</title>
+
+</head>
+<body>
+     <div class="navbar mainbar">
+        <div class="left_menu">
+            <img src="../assets/icons/companyicon.svg" alt="company icon" class="img mainIcon">
+        </div>  
+
+        <div class="title" style="position: absolute; right:1em; font-size:1.5em; color:rgb(63, 63, 63)">Administrator Registration</div>
+    </div>
+
+    <section class="form_container" style="height:auto;">
+
+        <form action="" method="post" class="form_plate" style="padding-bottom: 1em; margin-bottom:1em;">
+            
+            <input type="file" name="admin_picture" id="" value="Upload" class="admin_pic_upload">
+            <div class="admin_pic_holder"> </div>
+            
+            <p>
+                <label for="">Username</label> <br>
+                <input type="text" name="admin_name" placeholder="Please enter username" class="input_username">
+            </p>
+
+            <p>
+                <label for="">E-mail</label> <br>
+                <input type="text" name="admin_email" placeholder="Please enter email" class="input_email">
+            </p>
+            
+            <p>
+                <label for=""> Personal Identification Key</label> <br>
+                <input type="text" name="admin_personal_identification_key" placeholder="Please enter your identification key" class="admin_key">
+            </p>
+            
+            <p>
+                <label for="">Password</label> <br>
+                <input type="password" name="admin_password" placeholder="Please enter password" class="input_password">
+            </p>
+            
+            <p>
+                <label for="">Confirm password</label> <br>
+                <input type="password" name="admin_confirm_password" placeholder="Please confirm password" class="input_confirm_pass">
+            </p>
+
+            <p>
+                <input type="submit" name="admin_submit" value="Submit" class="submit_btn">
+            </p> 
+
+            <a href="adminlogin.html"> <input type="button" class="sign_up" value="log in"> </a>
+
+            <footer class="notification"></footer>
+        </form>
+    </section>
+</body>
+</html>

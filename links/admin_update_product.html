@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/signup.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/adminpage.css">
+    <link rel="stylesheet" href="../styles/useraccount.css">
+    <link rel="stylesheet" href="../styles/admin_upload_products.css">
+
+    <!-- <script type="module" async src="../script/adminaccount.js"></script> -->
+    <script type="module" async src="../script/admin_update_product.js"></script>
+
+    <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
+    <title>Update product</title>
+</head>
+<body>
+    <div class="navbar mainbar">
+
+        <div class="left_menu">
+            <img src="../assets/icons/companyicon.svg" alt="company icon" class="img mainIcon">
+        </div>
+
+        <div class="right_menu" style="width: 70%; margin-left:30%;">
+            <li><img src="../assets/icons/042-menu.svg" style="margin-top: 0.25em; margin-right:1em;" alt="company icon" class="img menuicon admin_account_menu_btn"></li>
+            <li class="admin_icon">
+                <div class="admin_img_container">  </div> 
+            </li>
+            <li class="username padd pr_username"> Username</li>
+            <li class="padd" style="color:rgb(63, 63, 63);"> Administrator account </li>
+        </div>
+        
+    </div>
+    
+    <div class="admin_account_menu mobile_hide_toggle">
+        <li class="admin_account_list"><a href="adminpage.html"> Dashboard </a></li>
+        <li class="admin_account_list"><a href="manageproduct.html">Manage Products </a></li>
+        <li class="admin_account_list"><a href="admin_manage_newsletter.html">Manage newsletter </a></li>
+        <li class="admin_account_list"><a href="admin_active_customers.html">Active customers</a></li>
+        <li class="admin_account_list"><a href="admin_product_delivery.html">Deliveries</a></li>
+        <li class="admin_account_list"><a href="admin_questions.html">Questions</a></li>
+        <li class="admin_account_list"><a href="admin_inactive_customers.html">Inactive customers</a></li>
+        <li class="admin_account_list"><a href="admin_payment.html">Payments</a></li>
+        <li class="admin_account_list"><a href="paystack...">Payment issues</a></li>
+        <li class="admin_account_list"><a href="sessiong closed">Log out </a></li>
+    </div>
+
+    <header class="head_title">
+         Update product 
+    </header>
+
+    <header class="admin_update_notify">
+        Please note that the product category name can not be updated to avoid data inconsistency <br>
+        The product category and name entered will be used to select the specific product you want to update
+    </header>
+
+    <section class="upload_prod_form_container" style="margin-top:2em;">
+
+        <div class="user_first_profile">
+
+            <p>
+                <label for="">Product category</label> <br>
+                <input type="text" name="product_category" class="product_category settings_input" placeholder="Please enter product category">
+        
+            </p>
+
+            <p>
+                <label for="">Product name</label> <br>
+                <input type="text" name="product_name" class="product_name email settings_input" placeholder="Please enter product name">
+
+            <p>
+                <label for="">Product details</label> <br>
+                <input type="text" name="product_details" class="product_details phone settings_input" placeholder="Please enter your product details">
+                
+            </p>
+            
+            <p>
+                <label for="">Product price</label> <br>
+                <input type="text" name="product_price" class="product_price settings_input" placeholder="Please enter your product price">
+                
+            </p>
+            
+            <p>
+                <label for="">Product quantity</label> <br>
+                <input type="text"  name="product_quantity" class="product_quantity settings_input" placeholder="Please enter product quantity">
+                
+            </p>
+
+
+            <!-- <img src="../product_pics/blue-background-close-up-clothing-1579063.jpg" alt="User image" class="user_image product_image_uploaded">
+            <p>
+
+                <form action="" class="image_submission">
+                    <label for="" style="margin-left: 1em;">Upload new picture</label> <br>
+                    <input type="file" name="product_picture" class="upload_btn"  style="margin-left: 0;">
+                    <button class="edit_btn choosepic"> Choose new picture </button>
+                    <button class="change_btn uploadchange_btn"> Update picture </button>
+                </form>
+
+            </p> -->
+        </div>
+
+
+        <form action="" method="post" class="user_profile_form">
+
+            
+
+             <p>
+                <label for="">Dress type</label> <br>
+                <input type="text" name="dress_type" class="Dress_type settings_input" placeholder="Choose either Unisex, Male or Female">
+                
+            </p>
+
+            <p>
+                <label for="">Dress size</label> <br>
+                <input type="text" name="dress_size" class="Dress_size settings_input" placeholder="Choose either XXL,XL,L,Slim fit">
+                
+            </p>
+
+            <p>
+                <label for="">Dress material</label> <br>
+                <input type="text" name="dress_material" class="Dress_material settings_input" placeholder="Please enter dress material">
+                
+            </p>
+
+            <p>
+                <label for="">Dress maker</label> <br>
+                <input type="text" name="dress_maker" class="Dress_maker settings_input" placeholder="Please enter product manufacturer">
+                
+            </p>
+            <button type="submit" class="update_submit_btn upload_submit_btn" style="border-radius:0.2em;">Update product</button>
+        </form>
+    </section>
+</body>
+</html>

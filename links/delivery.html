@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/useraccount.css">
+    <link rel="stylesheet" href="../styles/full_detail.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/delivery.css">
+    <link rel="stylesheet" href="../styles/adminpage.css">
+    
+    <script type="module" async src="../script/useraccount.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDafIc3mPhBtjUcn1CY_BkRw1hGZBvGJ-Q&callback=initMap">
+    </script>
+
+    <link rel="shortcut icon" href="../assets/icons/company_logo.svg" type="image/x-icon">
+    <script type="module" async src="../script/delivery.js"></script>
+
+    <title>Delivery</title>
+
+</head>
+<body>
+    <div class="navbar mainbar">
+
+        <div class="left_menu">
+            <img src="../assets/icons/companyicon.svg" alt="company icon" class="img mainIcon">
+        </div>
+
+        <input type="text" name="" id="" placeholder="Search products here" class="main_search useraccount_main_search">
+        <ul class="search_results" style="top: 2.2em;">
+            <li class="search_list"> Products </li>
+        </ul>
+
+        <div class="right_menu">
+            <li><img src="../assets/icons/042-menu.svg" alt="company icon" class="img menuicon user_account_menu_btn"></li>
+            <li class="usericon">
+                <div class="userimg_container"> </div> 
+            </li>
+            <li class="username padd pr_username"> Username</li>
+            <li class="padd"><a href="helpcenter.html" class="link">Help </a></li>
+        </div>
+        
+    </div>
+
+    <div class="user_account_menu mobile_hide_toggle">
+        <li class="user_account_menu_list"><a href="delivery.html"> Delivery </a></li>
+        <li class="user_account_menu_list"><a href="customer_questions.html"> Questions </a></li>
+        <li class="user_account_menu_list"><a href="helpcenter.html"> Payment Issues </a></li>
+        <li class="user_account_menu_list"><a href="useraccount.html"> Profile </a></li>
+        <li class="user_account_menu_list"><a href=""> Log out </a></li>
+    </div>
+
+    <div class="pagetitle">
+        <img src="../assets/icons/013-present.svg" alt=" settings" class="settings_icon"> 
+        <li class="settings_head"> Delivery </li>
+    </div>
+
+    <section class="delivery_details">
+        <div class="customer_address">
+            <p><h1>Your address</h1></p>
+            <div class="customeraddressdata">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque nulla, dolor praesentium quas alias vitae est, expedita amet eum, nihil doloribus exercitationem officiis iste quasi. Nobis iure illo voluptates?
+            </div>
+        </div>
+
+        <div class="delivery_interval">
+            <p><h1>Our delivery interval</h1></p>
+            <div>
+                Our delivery to your location takes fourteen days(14), counting from your day of order. Incase of any
+                unexpected events, we will let you know when your order will be at your pick point. If you change your 
+                mind while the delivery is being delayed, you can have your money back or change the product you've ordered.
+            </div>
+        </div>
+
+        <div class="pick_points">
+            <p><h1>Our pick point(s) according to your address</h1></p>
+            <div class="pickpointsdata">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium itaque nulla, dolor praesentium quas alias vitae est, expedita amet eum, nihil doloribus exercitationem officiis iste quasi. Nobis iure illo voluptates?
+            </div>
+        </div>
+        
+        <div class="google_map">
+            <p><h1>Google map pick points</h1></p>
+            Google map here
+        </div>
+    </section>
+</body>
+</html>

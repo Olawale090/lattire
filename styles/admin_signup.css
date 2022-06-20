@@ -1,0 +1,38 @@
+.admin_pic_upload{
+    border:none; 
+    background-color:red; 
+    border-radius:5em;
+    margin-left:10em; 
+    width:5em; 
+    height:5em; 
+    opacity: 0;
+    transition: none;
+}
+
+.admin_pic_upload:hover{
+    cursor: pointer;
+}
+
+.admin_pic_upload:hover +.admin_pic_holder{
+    background-color: rgb(219, 219, 219);
+}
+
+.admin_pic_holder{
+    margin-left:10em;
+    background-color:whitesmoke;
+    background-image: url('../assets/icons/039-user\ black.svg');
+    background-size: cover; 
+    object-fit: cover;
+    width:5em; 
+    height:5em; 
+    margin-top:-5em; 
+    z-index:-1;
+    border-radius:5em;
+    color: rgb(247, 177, 73);
+    font-size:1em;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 2em;
+    font-family: 'Segoe UI';
+    transition: 0.2s;
+}

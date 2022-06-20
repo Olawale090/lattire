@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="203" height="49" viewBox="0 0 203 49">
+  <g id="Group_300" data-name="Group 300" transform="translate(-100 98)">
+    <g id="Group_298" data-name="Group 298" transform="translate(101.805 -92)">
+      <path id="Polygon_8" data-name="Polygon 8" d="M22.558,0A18.256,18.256,0,0,1,32.773,3.125l1.1.744a18.256,18.256,0,0,1,7.018,9.105h0a18.257,18.257,0,0,1,0,12.052h0a18.257,18.257,0,0,1-7.018,9.105l-1.1.744A18.257,18.257,0,0,1,22.558,38H20.442a18.256,18.256,0,0,1-10.215-3.125l-1.1-.744a18.256,18.256,0,0,1-7.018-9.105h0a18.256,18.256,0,0,1,0-12.052h0A18.256,18.256,0,0,1,9.125,3.869l1.1-.744A18.256,18.256,0,0,1,20.442,0Z" transform="translate(0.195)" fill="#fbc04c"/>
+      <text id="LT" transform="translate(10.195 27)" fill="#fff" font-size="23" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">LT</tspan></text>
+    </g>
+    <text id="L_ATTIRE" data-name="L&apos;ATTIRE" transform="translate(152 -58)" fill="#fbc04c" font-size="37" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">L&apos;ATTIRE</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+body{
+    background-image: url('../assets/icons/effect.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.form_container{
+    margin-top: 3em;
+    background-color: white; 
+    width: 30%;
+    height: 35em;
+    margin-left: 35%;
+    box-shadow: 0 1px 10px 0.1px rgb(155, 155, 155);
+}
+
+.form_plate{
+    display: inline-block;
+    margin-top: 1.5em;
+    width: 100%;
+}
+
+label{
+    font-family: 'Segoe UI';
+    margin-left: 3.5em;
+    font-weight: 500;
+}
+
+input{
+    margin-left: 3.5em;
+    border:none;
+    height: 2.5em;
+    width: 19em;
+    border-bottom: solid rgb(245, 222, 122) 1px;
+    padding-left: 0.5em;
+    font-family: 'Segoe UI';
+    font-size: medium;
+    color: rgb(175, 175, 175);
+    transition: 1s;
+}
+
+input:focus{
+    outline: none;
+    border-bottom: solid rgb(245, 222, 122) 2px;
+}
+
+input::placeholder{
+    font-style: italic;
+    color: rgb(180, 180, 180);
+}
+
+.submit_btn{
+    background-color:var(--minor_fColor);
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI';
+    font-weight: 500;
+    border: none;
+}
+
+.facebook_btn{
+    background-color: #4675f8;
+    color: white;
+    font-family: 'Segoe UI';
+    font-weight: 500;
+    border:none;
+}
+
+.sign_in{
+    font-family: 'Segoe UI';
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 7.5em;
+}
+
+.notification{
+    font-family: 'Segoe UI';
+    text-align: center;
+    margin-top: 1.5em;
+    color: crimson;
+    font-weight: 500;
+    font-style: italic;
+    transition: all 0.2s;
+}
+
+
+/* this codes were only used in admin pages */
+
+.sign_up{
+    width: 19em;
+    height: 2.5em;
+    background-color: #4675f8;
+    text-align: center;
+    color: white;
+}
+
+a{
+    margin-left: -1.2em;
+    width: 100%;
+    text-decoration: none;
+}

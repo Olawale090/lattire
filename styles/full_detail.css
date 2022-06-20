@@ -1,0 +1,130 @@
+.userimg_container{
+    background-color: red;
+    object-fit: cover;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 3em;
+}
+
+.main_search{
+    margin-left: 20em;
+    width:25em;
+    height: 2em;
+}
+
+.right_menu{
+    margin-left:auto;
+    margin-top: -0.3em;
+}
+
+.menuicon{
+    object-fit: cover;
+    margin-bottom: -0.8em;
+    margin-right: 0.3em;
+}
+
+.padd{
+    margin-top: .5em;
+}
+
+.pr_username{
+    color: black;
+}
+
+.productdetails_maincontainer{
+    margin-top: 2em;
+    height: 30em;
+    padding: 1em;
+    display: grid;
+    grid-template: repeat(1,1fr) / repeat(2,1fr);
+}
+
+.first_section{
+    grid-column: 1/1;
+}
+
+.second_section{
+    grid-column: 2/2;
+}
+.productPic{
+    height: 20em;
+    width: 20em;
+}
+
+.button_holders{
+    width: 20em;
+    display: grid;
+    grid-template: repeat(1,1fr) / repeat(2,1fr);
+}
+
+.cart_btn{
+    background-color: var(--minor_fColor);
+    color: black;
+}
+
+.order_btn{
+    background-color: black;
+    color: white;
+}
+
+.page_subtitle{
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.two_subhead{
+    margin-top: .5em;
+    display: grid;
+    grid-template: repeat(1,1fr) / repeat(2, 1fr);
+}
+
+/* .product_features{
+    background-color: crimson;
+} */
+
+.product_features>li{
+    padding:.3em;
+    background-color: var(--minor_fColor);
+    color: black;
+    font-family: 'Segoe UI';
+    margin-bottom: .5em;
+    font-weight: bold;
+    width: 15em;
+}
+
+.product_color{
+    width: 15em;
+    height: 4em;
+    background-color: whitesmoke;
+}
+
+.product_price{
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1.3em;
+    width: 15em;
+    height: 4em;
+    margin-top: 1em;
+    background-color: black;
+    color:var(--minor_fColor)
+}
+
+.product_fulldetails{
+    font-family: 'Segoe UI';
+    margin-top: 1em;
+}
+
+.delivery_date{
+    background-color:black;
+    color: white;
+    font-family: 'Segoe UI';
+    text-align: center;
+    height: 2.5em;
+    padding-top:.5em;
+    margin-top: 2em;
+    font-weight: bold;
+
+}
+
