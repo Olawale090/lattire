@@ -3,7 +3,6 @@ import { usercartdata } from "./usercart.js";
 
 let customerdata = new usercartdata();
 document.onload = customerdata.navbardata();
-// console.log(customerdata);
 
 export const chatusername = function(){
     this.chatusername = document.querySelector(".chatusername");

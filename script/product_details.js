@@ -1,9 +1,7 @@
 "use strict";
-
 const product_full_details_navbar_data = function(){
     this.username = document.querySelector(".username");
     this.userimage = document.querySelector(".userimg_container");
-
     this.suggestionName = document.querySelector(".suggestionusername");
 };
 
@@ -44,9 +42,6 @@ product_full_details_navbar_data.prototype = {
 
 let product_data = new product_full_details_navbar_data();
 document.onload = product_data.customerDetailsNavbar();
-
-
-
 var product_details_widget = function () {
     this.menu = document.querySelector(".prod_details_menu");
     this.mobileProductList = document.querySelector(".mobile_product_list");

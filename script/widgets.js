@@ -43,7 +43,7 @@ uiWidgets.prototype = {
 
     scrollEffect(){
             if (window.pageYOffset >=100) {
-                this.navBar.style.backgroundColor = "rgb(60, 123, 240)";
+                this.navBar.style.backgroundColor = "rgb(100, 100, 100)";
             }else{
                 this.navBar.style.backgroundColor = "white";
             }

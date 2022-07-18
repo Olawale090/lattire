@@ -1,5 +1,5 @@
 <?php
-
+    
     Interface Ifetches{
 
         public function database_connection();

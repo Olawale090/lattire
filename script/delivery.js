@@ -3,9 +3,6 @@
 export const delivery = function (){
     this.name = document.querySelector(".username");
     this.address = document.querySelector(".customeraddressdata");
-
-    // this.deliveryInterval;
-
     this.pickpoints = document.querySelector(".pickpointsdata");
     this.userimage = document.querySelector(".userimg_container");
 
