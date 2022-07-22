@@ -9,6 +9,12 @@ const main_product_loader = function(){
     this.secondBatch = document.querySelector(".second_batch");
     this.categoryTitle2 = document.querySelector(".category_title2");
 
+    this.thirdBatch = document.querySelector(".third_batch");
+    this.categoryTitle3 = document.querySelector(".category_title3");
+
+    this.fourthBatch = document.querySelector(".fourth_batch");
+    this.categoryTitle4 = document.querySelector(".category_title4");
+
     this.scroller = document.querySelector(".product_scroll");
 
 };
@@ -173,6 +179,144 @@ main_product_loader.prototype = {
         xhr.send();
         
 
+    },
+
+    fetchThirdProductSection(){
+
+        const xhr = new XMLHttpRequest();
+            
+        xhr.open('GET','php/third_product_loader.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+
+        xhr.onload = ()=> {
+                
+            if (xhr.status === 200) {
+
+                let thirdScroller = document.querySelector(".third_scroll");
+
+                let data = JSON.parse(xhr.responseText);
+
+                for (let i = 0; i < data.length; i++) {
+
+                    let path = data[i].productpicdir;
+                    let newpath = path.slice(3);
+
+                    this.categoryTitle3.innerHTML = `${data[i].product_category}`;
+
+
+                    thirdScroller.innerHTML += `
+
+                        <div class="product_tag">
+                            <img src="${newpath}" alt="product image" class="product_pics">
+                            <footer class="product_details">
+                                <h3> ${data[i].product_name} </h3>
+                                ${data[i].product_details}
+                            </footer>
+
+                            <a class="product_full_details specific_product ${data[i].product_name}" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
+                           
+                            <footer class="button_holders">
+                                <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+
+                                <button type="submit" class="product_cart Add_to_cart btn">  
+                                    <div class="cart_icon"></div> Add to cart
+                                </button>
+                            </footer>
+                        </div> 
+                    
+                    `;
+                    
+                    
+                }
+                
+            } else if (xhr.status === 404) {
+
+                alert("PAGE NOT FOUND");
+
+                console.error ("THE PHP FILE DIRECTORY PASSED IS INCORRECT");
+
+            }
+        
+        };
+
+        xhr.onerror = (error)=>{
+            console.error("error found: "+ error);
+            alert("error found: " + error);
+        };
+
+        xhr.send();
+        
+
+    },
+
+    fetchFourthProductSection(){
+
+        const xhr = new XMLHttpRequest();
+            
+        xhr.open('GET','php/Fourth_product_loader.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+
+        xhr.onload = ()=> {
+                
+            if (xhr.status === 200) {
+
+                let fourthScroller = document.querySelector(".fourth_scroll");
+
+                let data = JSON.parse(xhr.responseText);
+
+                for (let i = 0; i < data.length; i++) {
+
+                    let path = data[i].productpicdir;
+                    let newpath = path.slice(3);
+
+                    this.categoryTitle4.innerHTML = `${data[i].product_category}`;
+
+
+                    fourthScroller.innerHTML += `
+
+                        <div class="product_tag">
+                            <img src="${newpath}" alt="product image" class="product_pics">
+                            <footer class="product_details">
+                                <h3> ${data[i].product_name} </h3>
+                                ${data[i].product_details}
+                            </footer>
+
+                            <a class="product_full_details specific_product ${data[i].product_name}" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
+                           
+                            <footer class="button_holders">
+                                <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+
+                                <button type="submit" class="product_cart Add_to_cart btn">  
+                                    <div class="cart_icon"></div> Add to cart
+                                </button>
+                            </footer>
+                        </div> 
+                    
+                    `;
+                    
+                    
+                }
+                
+            } else if (xhr.status === 404) {
+
+                alert("PAGE NOT FOUND");
+
+                console.error ("THE PHP FILE DIRECTORY PASSED IS INCORRECT");
+
+            }
+        
+        };
+
+        xhr.onerror = (error)=>{
+            console.error("error found: "+ error);
+            alert("error found: " + error);
+        };
+
+        xhr.send();
+        
+
     }
 
 };
@@ -180,6 +324,8 @@ main_product_loader.prototype = {
 const loader = new main_product_loader();
 loader.fetchFirstProductSection();
 loader.fetchSecondProductSection();
+loader.fetchThirdProductSection();
+loader.fetchFourthProductSection();
 
 
 /**

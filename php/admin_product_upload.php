@@ -56,15 +56,17 @@
                             $product_exist_queried = $this->mysqli->query($product_exist_query);
                             $product_exist_check = $product_exist_queried->fetch_array(MYSQLI_ASSOC);
 
-                           
-                                                        
-                            if ( $product_exist_check["product_name"] == $prd_name) {
-                                
-                                echo " This product already exist " . $_SESSION['product_name'];
-                                    
-                            } else {
+                            // substr_compare($product_exist_check['product_name'],$prd_name,0,strlen($product_exist_check['product_name'])) > -1
+                            // echo $product_exist_query;
 
-                                $path = "../product_categories/".$_SESSION['product_category_name'];
+                            if ($product_exist_check["product_name"] == $prd_name) {
+                                
+                                echo "This product already exist " . $_SESSION['product_name'];
+                                
+
+                           }                            
+                             else {
+                                $path = "../product_categories/" . $_SESSION['product_category_name'];
 
                                 if (is_dir($path)) {
 
@@ -119,10 +121,7 @@
 
                                 }
                                
-
                             } 
-
-                            // throw new Exception("Error Processing Request");
 
                     } catch (Exception $err) {
 

@@ -26,15 +26,17 @@ customerForms.prototype ={
                         if (xhr.responseText.includes('{')) {
 
                             let data = JSON.parse(xhr.responseText);
-                            // alert(data.customername);
 
-                            window.open('../index.html','_self');
-                            this.notification.innerHTML = "Login Successful";
-                            this.notification.style.color = "green";
+                            if(data.customeremail && data.customerpassword){
 
+                                window.open('../index.html','_self');
+                                this.notification.innerHTML = "Login Successful";
+                                this.notification.style.color = "green";
 
+                            }
+                            
                         } else {
-                            this.notification.innerHTML = xhr.responseText;
+                            this.notification.innerHTML = "User log in failed, please try again";
                         }
                         
         

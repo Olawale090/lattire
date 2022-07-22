@@ -46,7 +46,7 @@
                                 echo " Picture updated successfully ";
     
                             } else {
-                                echo " Picture update failed ". $sessionEmail . " " . $location;
+                                echo " Picture update failed ". $sessionEmail . " " . $location. " ". $filename;
                             }
     
     

@@ -24,11 +24,11 @@ administrator_login.prototype = {
                 if (xhr.status === 200) {
                         
                         if (xhr.responseText === "Login successful") {
-                            
+                              
                             window.open("../links/adminpage.html","_self");
 
                         }else{
-                            this.notification.innerHTML = xhr.responseText;
+                            this.notification.innerHTML = "Administrator log in failed, please try again";
                         }
                 
 

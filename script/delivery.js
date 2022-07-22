@@ -1,5 +1,10 @@
 "use strict";
+import { usercartdata } from "./usercart.js";
 
+setTimeout(function(){
+    let customerdata = new usercartdata();
+    customerdata.navbardata();
+},2000);
 export const delivery = function (){
     this.name = document.querySelector(".username");
     this.address = document.querySelector(".customeraddressdata");

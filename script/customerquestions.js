@@ -1,8 +1,11 @@
 "use strict";
 import { usercartdata } from "./usercart.js";
 
-let customerdata = new usercartdata();
-document.onload = customerdata.navbardata();
+setTimeout(function(){
+    let customerdata = new usercartdata();
+    customerdata.navbardata();
+},2000);
+
 
 export const chatusername = function(){
     this.chatusername = document.querySelector(".chatusername");
@@ -35,4 +38,3 @@ chatusername.prototype = {
 
 let chatbox = new chatusername();
 document.onload = chatbox.chatbubble();
-console.log(chatbox);

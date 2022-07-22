@@ -138,22 +138,22 @@
 
             <div class="two_subhead">
                 <div class="product_features">
-                    <li>Dress type:  
+                    <li>Product type:  
                         <?php
                             print_r($_SESSION["alldata"][0]["product_type"]);
                         ?>
                     </li>
-                    <li>Dress size : 
+                    <li>Product size : 
                         <?php
                             print_r($_SESSION["alldata"][0]["product_size"]);
                         ?>
                     </li>
-                    <li>Dress material : 
+                    <li>Product material : 
                         <?php
                             print_r($_SESSION["alldata"][0]["product_material"]);
                         ?>
                     </li>
-                    <li>Dress maker :
+                    <li>Product maker :
                         <?php
                             print_r($_SESSION["alldata"][0]["product_maker"]);
                         ?>

@@ -1,4 +1,10 @@
 "use strict";
+import { usercartdata } from "./usercart.js";
+
+setTimeout(function(){
+    let customerdata = new usercartdata();
+    customerdata.navbardata();
+},2000);
 var user_account = function () {
     this.menu = document.querySelector(".user_account_menu_btn");
     this.menuList = document.querySelector(".user_account_menu");
