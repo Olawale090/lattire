@@ -112,7 +112,7 @@
     width: 35%;
     bottom  : 0;
     left: calc(65%/2);
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0);
 }
 
 .chat_input{

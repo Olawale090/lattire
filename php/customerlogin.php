@@ -31,9 +31,11 @@
                         $passQuery = $this->mysqli->query($query, MYSQLI_STORE_RESULT);
                         $customer_data = $passQuery->fetch_array(MYSQLI_ASSOC);
 
+
                         if ($customer_data['customeremail'] === $email && $customer_data['customerpassword'] === $password) {
 
                             echo json_encode($customer_data); 
+                            $_SESSION['logged_customer_name'] = $customer_data['customername'];
                             
                         } else {
                             echo ' Account not found, please signup ';

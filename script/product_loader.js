@@ -4,7 +4,6 @@ const main_product_loader = function(){
 
     this.firstBatch = document.querySelector(".first_batch");
     this.categoryTitle = document.querySelector(".category_title");
-    this.product_carrier = document.querySelector(".category");
 
     this.secondBatch = document.querySelector(".second_batch");
     this.categoryTitle2 = document.querySelector(".category_title2");
@@ -15,6 +14,10 @@ const main_product_loader = function(){
     this.fourthBatch = document.querySelector(".fourth_batch");
     this.categoryTitle4 = document.querySelector(".category_title4");
 
+    this.fifthBatch = document.querySelector(".fifth_batch");
+    this.categoryTitle5 = document.querySelector(".category_title5");
+
+    this.product_carrier = document.querySelector(".category");
     this.scroller = document.querySelector(".product_scroll");
 
 };
@@ -51,12 +54,6 @@ main_product_loader.prototype = {
                                 let path = e.data.result[i].productpicdir;
                                 let newpath = path.slice(3);
 
-                                localStorage.setItem("productID",e.data.result[i].id);
-                                localStorage.setItem("productName",e.data.result[i].product_name);
-                                localStorage.setItem("productDetails",e.data.result[i].product_details);
-                                localStorage.setItem("productPrice",e.data.result[i].product_price);
-                                localStorage.setItem("productPicDir",e.data.result[i].productpicdir);
-
                                 var categoryTitle = document.querySelector(".category_title");
                                 categoryTitle.innerHTML = `${e.data.result[i].product_category}`;
 
@@ -64,19 +61,30 @@ main_product_loader.prototype = {
                                 scroller.innerHTML += `
 
                                     <div class="product_tag">
-                                        <img src="${newpath}" alt="product image" class="product_pics">
-                                        <footer class="product_details">
-                                            <h3> ${e.data.result[i].product_name} </h3>
+                                        <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
+                                        <footer class="product_details prod_${e.data.result[i].product_name}">
+                                            <h3 class="spec_prd_name" data-productname="${e.data.result[i].product_name}"> ${e.data.result[i].product_name} </h3>
                                             ${e.data.result[i].product_details}
                                         </footer>
 
-                                        <a id="${localStorage.getItem("productID")}" class="first_button product_full_details ${e.data.result[i].product_name} specific_product" href="php/product_full_detail.php?product=${e.data.result[i].product_name}"> Get full detail </a>
+                                        <a class="first_button product_full_details ${e.data.result[i].product_name} specific_product" href="php/product_full_detail.php?product=${e.data.result[i].product_name}"> Get full detail </a>
             
                                         <footer class="button_holders">
                                             <button type="submit" class="price prod_btn btn">${e.data.result[i].product_price} </button>
 
-                                            <button type="submit" class="product_cart Add_to_cart btn">  
-                                                <div class="cart_icon"></div> Add to cart
+                                            <button type="submit" class="product_cart Add_to_cart btn" id="cartID${i}" data-productid="${e.data.result[i].id}" data-productcateg="${e.data.result[i].product_category}"
+                                                data-productname="${e.data.result[i].product_name}"
+                                                data-productdetails="${e.data.result[i].product_details}"
+                                                data-productprice="${e.data.result[i].product_price}"
+                                                data-productpicdir="${e.data.result[i].productpicdir}">  
+
+                                                <div class="cart_icon" name="cartID"></div> Add to cart
+                                                <div class="cart_icon" name="cartCateg"></div>
+                                                <div class="cart_icon" name="cartName"></div>
+                                                <div class="cart_icon" name="cartDetails"></div>
+                                                <div class="cart_icon" name="cartPrice"></div>
+                                                <div class="cart_icon" name="cartPic"></div>
+
                                             </button>
                                         </footer>
                                     </div> 
@@ -139,7 +147,7 @@ main_product_loader.prototype = {
                     secondScroller.innerHTML += `
 
                         <div class="product_tag">
-                            <img src="${newpath}" alt="product image" class="product_pics">
+                            <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
                             <footer class="product_details">
                                 <h3> ${data[i].product_name} </h3>
                                 ${data[i].product_details}
@@ -208,7 +216,7 @@ main_product_loader.prototype = {
                     thirdScroller.innerHTML += `
 
                         <div class="product_tag">
-                            <img src="${newpath}" alt="product image" class="product_pics">
+                            <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
                             <footer class="product_details">
                                 <h3> ${data[i].product_name} </h3>
                                 ${data[i].product_details}
@@ -254,7 +262,7 @@ main_product_loader.prototype = {
 
         const xhr = new XMLHttpRequest();
             
-        xhr.open('GET','php/Fourth_product_loader.php', true);
+        xhr.open('GET','php/fourth_product_loader.php', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
 
@@ -277,7 +285,76 @@ main_product_loader.prototype = {
                     fourthScroller.innerHTML += `
 
                         <div class="product_tag">
-                            <img src="${newpath}" alt="product image" class="product_pics">
+                            <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
+                            <footer class="product_details">
+                                <h3> ${data[i].product_name} </h3>
+                                ${data[i].product_details}
+                            </footer>
+
+                            <a class="product_full_details specific_product ${data[i].product_name}" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
+                           
+                            <footer class="button_holders">
+                                <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+
+                                <button type="submit" class="product_cart Add_to_cart btn">  
+                                    <div class="cart_icon"></div> Add to cart
+                                </button>
+                            </footer>
+                        </div> 
+                    
+                    `;
+                    
+                    
+                }
+                
+            } else if (xhr.status === 404) {
+
+                alert("PAGE NOT FOUND");
+
+                console.error ("THE PHP FILE DIRECTORY PASSED IS INCORRECT");
+
+            }
+        
+        };
+
+        xhr.onerror = (error)=>{
+            console.error("error found: "+ error);
+            alert("error found: " + error);
+        };
+
+        xhr.send();
+        
+
+    },
+
+    fetchFifthProductSection(){
+
+        const xhr = new XMLHttpRequest();
+            
+        xhr.open('GET','php/fifth_product_loader.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+
+        xhr.onload = ()=> {
+                
+            if (xhr.status === 200) {
+
+                let fifthScroller = document.querySelector(".fifth_scroll");
+
+                let data = JSON.parse(xhr.responseText);
+
+                for (let i = 0; i < data.length; i++) {
+
+                    let path = data[i].productpicdir;
+                    let newpath = path.slice(3);
+
+                    this.categoryTitle5.innerHTML = `${data[i].product_category}`;
+
+
+                    fifthScroller.innerHTML += `
+
+                        <div class="product_tag">
+                            <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
                             <footer class="product_details">
                                 <h3> ${data[i].product_name} </h3>
                                 ${data[i].product_details}
@@ -326,6 +403,7 @@ loader.fetchFirstProductSection();
 loader.fetchSecondProductSection();
 loader.fetchThirdProductSection();
 loader.fetchFourthProductSection();
+loader.fetchFifthProductSection();
 
 
 /**
@@ -348,9 +426,13 @@ const product_slide = function(){
     this.third_right_scroll = document.getElementById("third_right_scroll");
     this.third_left_scroll = document.getElementById("third_left_scroll");
 
-    this.fourth_categ_carrier = document.getElementById("third_categ");
-    this.fourth_right_scroll = document.getElementById("third_right_scroll");
-    this.fourth_left_scroll = document.getElementById("third_left_scroll");
+    this.fourth_categ_carrier = document.getElementById("fourth_categ");
+    this.fourth_right_scroll = document.getElementById("fourth_right_scroll");
+    this.fourth_left_scroll = document.getElementById("fourth_left_scroll");
+
+    this.fifth_categ_carrier = document.getElementById("fifth_categ");
+    this.fifth_right_scroll = document.getElementById("fifth_right_scroll");
+    this.fifth_left_scroll = document.getElementById("fifth_left_scroll");
 };
 
 product_slide.prototype = {
@@ -415,18 +497,36 @@ product_slide.prototype = {
 
     fourth_scroll_to_right(){
 
-        this.third_right_scroll.addEventListener('click',()=>{
+        this.fourth_right_scroll.addEventListener('click',()=>{
 
-            this.third_categ_carrier.scrollLeft +=400;
+            this.fourth_categ_carrier.scrollLeft +=400;
 
         });
         
     },
 
     fourth_scroll_to_left(){
-        this.third_left_scroll.addEventListener('click',()=>{
+        this.fourth_left_scroll.addEventListener('click',()=>{
 
-            this.third_categ_carrier.scrollLeft -=400;
+            this.fourth_categ_carrier.scrollLeft -=400;
+
+        });
+    },
+
+    fifth_scroll_to_right(){
+
+        this.fifth_right_scroll.addEventListener('click',()=>{
+
+            this.fifth_categ_carrier.scrollLeft +=400;
+
+        });
+        
+    },
+
+    fifth_scroll_to_left(){
+        this.fifth_left_scroll.addEventListener('click',()=>{
+
+            this.fifth_categ_carrier.scrollLeft -=400;
 
         });
     }
@@ -443,3 +543,9 @@ product_slider.second_scroll_to_left();
 
 product_slider.third_scroll_to_right();
 product_slider.third_scroll_to_left();
+
+product_slider.fourth_scroll_to_right();
+product_slider.fourth_scroll_to_left();
+
+product_slider.fifth_scroll_to_right();
+product_slider.fifth_scroll_to_left();

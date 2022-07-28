@@ -51,6 +51,5 @@
     $product_loader = new product_fetch();
     $product_loader->database_connection();
     $product_loader->product_data();
-    // $product_loader->product_data("Shirt");
 
 ?>
