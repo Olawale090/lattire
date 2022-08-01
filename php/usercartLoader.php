@@ -14,7 +14,8 @@
         public function __construct(){
 
             $this->mysqli = new mysqli('localhost','root','','lattire');
-            $this->customeremail = $_SESSION['customeremail'];
+            $this->customer_email = $_SESSION['customeremail'];
+            // $this->product_category =  $_SESSION['product_category'];
         }
 
         
@@ -31,11 +32,11 @@
 
         public function carted_product_data (){
 
-            $customer_email = $this->customeremail;
-        
+            $customer_email = $this->customer_email;
+            // $product_category = $this->product_category;
+
             $query = " SELECT * FROM customer_cart 
                        WHERE customer_email = '$customer_email'
-                       LIMIT 6
                     ";
 
             $passQuery = $this->mysqli->query($query,MYSQLI_USE_RESULT);
@@ -47,7 +48,7 @@
                     echo json_encode($passAllData);
                     
                 }else{
-                    echo "Fetching failed";
+                    echo "Fetching failed ";
                     
                 }
             } catch (Exception $e){

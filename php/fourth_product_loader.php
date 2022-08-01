@@ -31,7 +31,7 @@
         public function product_data (){
 
             $query = " SELECT * FROM productstable 
-                       WHERE product_category = 'Furnitures'
+                       WHERE product_category = 'Furniture'
                        LIMIT 6
                      ";
 

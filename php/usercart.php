@@ -56,6 +56,7 @@
                 if ($passQuery) {
 
                     echo "carting sucessful";
+                    $_SESSION['product_category'] = $product_categ;
                     
                 }else{
                     echo "carting failed ";

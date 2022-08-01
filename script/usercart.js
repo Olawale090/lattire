@@ -53,7 +53,7 @@ const cart_loader = function(){
 }
 
 cart_loader.prototype = {
-    loadFirstCartedProduct (){
+    loadAllCartedProduct (){
         let xhr = new XMLHttpRequest();
             xhr.open('POST','../php/usercartLoader.php', true);
             xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
@@ -71,7 +71,7 @@ cart_loader.prototype = {
                         this.scroller.innerHTML += `
 
                                 <div class="product_tag" id="product_tag${[i]}">
-                                    <button class="cart_remove_btn" id="delete_cart${[i]}" data-productName="${data[i].product_name}" data-customeremail="${data[i].customer_email}">
+                                    <button class="cart_remove_btn delete_${data[i].product_name}cart${i}" id="delete_cart${i}" data-delproductname="delete_${data[i].product_name}cart${i}" data-productName="${data[i].product_name}" data-customeremail="${data[i].customer_email}">
                                         x
                                         <div name="cart_pr_name"> </div>
                                         <div name="cart_cust_email"> </div>
@@ -97,17 +97,61 @@ cart_loader.prototype = {
                             
                             `;
                     }
+
                 }else{
                     console.log("error occured");
                 }
             }
-
             xhr.send();
+            return{
+                delete_product:function(){
+
+                    xhr.onload=()=>{
+                        if(xhr.status==200){
+                            let data = JSON.parse(xhr.responseText);
+                            console.log(data);
+                            var counter = data.length;
+                            var divider = counter/counter;
+                            var picker = divider-1;
+                            
+                            // for (let i = 0; i < data.length; i++) {
+                                var delBtn = document.getElementById(`delete_cart${picker}`);
+                               
+                                
+                                // delBtn.addEventListener("click",()=>{
+                                //     console.log(delBtn.dataset.delproductname);
+                                // })
+                                // console.log(data[i].product_name);
+
+                                console.log(delBtn);
+                            // }
+
+                            // delBtn.addEventListener("click",()=>{
+                                // console.log(delBtn.dataset.delproductname);
+                                
+                            // })
+                        }
+                    }
+                    
+
+                    console.log("name")                                
+                }
+            }
+
+            
+
+            
     }
 }
 
 let cartedLoader = new cart_loader();
-window.onload = cartedLoader.loadFirstCartedProduct();
+window.onload = cartedLoader.loadAllCartedProduct();
+
+setTimeout(function(){
+    console.log(cartedLoader.loadAllCartedProduct().delete_product());
+},1000)
+
+// console.log(cartedLoader.loadAllCartedProduct().delete_product());
 
 
 const product_slide = function(){

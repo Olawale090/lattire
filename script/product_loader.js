@@ -72,7 +72,7 @@ main_product_loader.prototype = {
                                         <footer class="button_holders">
                                             <button type="submit" class="price prod_btn btn">${e.data.result[i].product_price} </button>
 
-                                            <button type="submit" class="product_cart Add_to_cart btn" id="cartID${i}" data-productid="${e.data.result[i].id}" data-productcateg="${e.data.result[i].product_category}"
+                                            <button type="submit" class="product_cart Add_to_cart btn" id="${e.data.result[i].product_category}cartID${i}" data-productid="${e.data.result[i].id}" data-productcateg="${e.data.result[i].product_category}"
                                                 data-productname="${e.data.result[i].product_name}"
                                                 data-productdetails="${e.data.result[i].product_details}"
                                                 data-productprice="${e.data.result[i].product_price}"
@@ -146,23 +146,34 @@ main_product_loader.prototype = {
 
                     secondScroller.innerHTML += `
 
-                        <div class="product_tag">
-                            <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
-                            <footer class="product_details">
-                                <h3> ${data[i].product_name} </h3>
-                                ${data[i].product_details}
-                            </footer>
+                    <div class="product_tag">
+                        <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
+                        <footer class="product_details prod_${data[i].product_name}">
+                            <h3 class="spec_prd_name" data-productname="${data[i].product_name}"> ${data[i].product_name} </h3>
+                            ${data[i].product_details}
+                        </footer>
 
-                            <a class="product_full_details specific_product ${data[i].product_name}" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
-                           
-                            <footer class="button_holders">
-                                <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+                        <a class="first_button product_full_details ${data[i].product_name} specific_product" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
 
-                                <button type="submit" class="product_cart Add_to_cart btn">  
-                                    <div class="cart_icon"></div> Add to cart
-                                </button>
-                            </footer>
-                        </div> 
+                        <footer class="button_holders">
+                            <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+
+                            <button type="submit" class="product_cart Add_to_cart btn" id="${data[i].product_category}cartID${i}" data-productid="${data[i].id}" data-productcateg="${data[i].product_category}"
+                                data-productname="${data[i].product_name}"
+                                data-productdetails="${data[i].product_details}"
+                                data-productprice="${data[i].product_price}"
+                                data-productpicdir="${data[i].productpicdir}">  
+
+                                <div class="cart_icon" name="cartID"></div> Add to cart
+                                <div class="cart_icon" name="cartCateg"></div>
+                                <div class="cart_icon" name="cartName"></div>
+                                <div class="cart_icon" name="cartDetails"></div>
+                                <div class="cart_icon" name="cartPrice"></div>
+                                <div class="cart_icon" name="cartPic"></div>
+
+                            </button>
+                        </footer>
+                    </div> 
                     
                     `;
                     
@@ -215,23 +226,34 @@ main_product_loader.prototype = {
 
                     thirdScroller.innerHTML += `
 
-                        <div class="product_tag">
-                            <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
-                            <footer class="product_details">
-                                <h3> ${data[i].product_name} </h3>
-                                ${data[i].product_details}
-                            </footer>
+                    <div class="product_tag">
+                        <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
+                        <footer class="product_details prod_${data[i].product_name}">
+                            <h3 class="spec_prd_name" data-productname="${data[i].product_name}"> ${data[i].product_name} </h3>
+                            ${data[i].product_details}
+                        </footer>
 
-                            <a class="product_full_details specific_product ${data[i].product_name}" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
-                           
-                            <footer class="button_holders">
-                                <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+                        <a class="first_button product_full_details ${data[i].product_name} specific_product" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
 
-                                <button type="submit" class="product_cart Add_to_cart btn">  
-                                    <div class="cart_icon"></div> Add to cart
-                                </button>
-                            </footer>
-                        </div> 
+                        <footer class="button_holders">
+                            <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+
+                            <button type="submit" class="product_cart Add_to_cart btn" id="${data[i].product_category}cartID${i}" data-productid="${data[i].id}" data-productcateg="${data[i].product_category}"
+                                data-productname="${data[i].product_name}"
+                                data-productdetails="${data[i].product_details}"
+                                data-productprice="${data[i].product_price}"
+                                data-productpicdir="${data[i].productpicdir}">  
+
+                                <div class="cart_icon" name="cartID"></div> Add to cart
+                                <div class="cart_icon" name="cartCateg"></div>
+                                <div class="cart_icon" name="cartName"></div>
+                                <div class="cart_icon" name="cartDetails"></div>
+                                <div class="cart_icon" name="cartPrice"></div>
+                                <div class="cart_icon" name="cartPic"></div>
+
+                            </button>
+                        </footer>
+                    </div> 
                     
                     `;
                     
@@ -284,23 +306,34 @@ main_product_loader.prototype = {
 
                     fourthScroller.innerHTML += `
 
-                        <div class="product_tag">
-                            <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
-                            <footer class="product_details">
-                                <h3> ${data[i].product_name} </h3>
-                                ${data[i].product_details}
-                            </footer>
+                    <div class="product_tag">
+                        <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
+                        <footer class="product_details prod_${data[i].product_name}">
+                            <h3 class="spec_prd_name" data-productname="${data[i].product_name}"> ${data[i].product_name} </h3>
+                            ${data[i].product_details}
+                        </footer>
 
-                            <a class="product_full_details specific_product ${data[i].product_name}" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
-                           
-                            <footer class="button_holders">
-                                <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+                        <a class="first_button product_full_details ${data[i].product_name} specific_product" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
 
-                                <button type="submit" class="product_cart Add_to_cart btn">  
-                                    <div class="cart_icon"></div> Add to cart
-                                </button>
-                            </footer>
-                        </div> 
+                        <footer class="button_holders">
+                            <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+
+                            <button type="submit" class="product_cart Add_to_cart btn" id="${data[i].product_category}cartID${i}" data-productid="${data[i].id}" data-productcateg="${data[i].product_category}"
+                                data-productname="${data[i].product_name}"
+                                data-productdetails="${data[i].product_details}"
+                                data-productprice="${data[i].product_price}"
+                                data-productpicdir="${data[i].productpicdir}">  
+
+                                <div class="cart_icon" name="cartID"></div> Add to cart
+                                <div class="cart_icon" name="cartCateg"></div>
+                                <div class="cart_icon" name="cartName"></div>
+                                <div class="cart_icon" name="cartDetails"></div>
+                                <div class="cart_icon" name="cartPrice"></div>
+                                <div class="cart_icon" name="cartPic"></div>
+
+                            </button>
+                        </footer>
+                    </div> 
                     
                     `;
                     
@@ -353,25 +386,34 @@ main_product_loader.prototype = {
 
                     fifthScroller.innerHTML += `
 
-                        <div class="product_tag">
-                            <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
-                            <footer class="product_details">
-                                <h3> ${data[i].product_name} </h3>
-                                ${data[i].product_details}
-                            </footer>
+                    <div class="product_tag">
+                        <img src="${newpath}" alt="product image" class="product_pics" load="lazy">
+                        <footer class="product_details prod_${data[i].product_name}">
+                            <h3 class="spec_prd_name" data-productname="${data[i].product_name}"> ${data[i].product_name} </h3>
+                            ${data[i].product_details}
+                        </footer>
 
-                            <a class="product_full_details specific_product ${data[i].product_name}" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
-                           
-                            <footer class="button_holders">
-                                <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+                        <a class="first_button product_full_details ${data[i].product_name} specific_product" href="php/product_full_detail.php?product=${data[i].product_name}"> Get full detail </a>
 
-                                <button type="submit" class="product_cart Add_to_cart btn">  
-                                    <div class="cart_icon"></div> Add to cart
-                                </button>
-                            </footer>
-                        </div> 
-                    
-                    `;
+                        <footer class="button_holders">
+                            <button type="submit" class="price prod_btn btn">${data[i].product_price} </button>
+
+                            <button type="submit" class="product_cart Add_to_cart btn" id="${data[i].product_category}cartID${i}" data-productid="${data[i].id}" data-productcateg="${data[i].product_category}"
+                                data-productname="${data[i].product_name}"
+                                data-productdetails="${data[i].product_details}"
+                                data-productprice="${data[i].product_price}"
+                                data-productpicdir="${data[i].productpicdir}">  
+
+                                <div class="cart_icon" name="cartID"></div> Add to cart
+                                <div class="cart_icon" name="cartCateg"></div>
+                                <div class="cart_icon" name="cartName"></div>
+                                <div class="cart_icon" name="cartDetails"></div>
+                                <div class="cart_icon" name="cartPrice"></div>
+                                <div class="cart_icon" name="cartPic"></div>
+
+                            </button>
+                        </footer>
+                    </div> `;
                     
                     
                 }

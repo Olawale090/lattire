@@ -6,7 +6,6 @@
         public function __construct(){
             $this->mysqli = new mysqli('localhost','root','','lattire');
             $this->email = mysqli_real_escape_string($this->mysqli, $_POST['email']);
-            $_SESSION['customeremail'] = $this->email;
             $this->password = mysqli_real_escape_string($this->mysqli, $_POST['password']);
         }
 
@@ -36,6 +35,7 @@
 
                             echo json_encode($customer_data); 
                             $_SESSION['logged_customer_name'] = $customer_data['customername'];
+                            $_SESSION['customeremail'] = $this->email;
                             
                         } else {
                             echo ' Account not found, please signup ';
