@@ -7,6 +7,9 @@ const cartingWearProducts = function(){
     this.fourthPicker = document.getElementById('WearscartID3');
     this.fifthPicker = document.getElementById('WearscartID4');
     this.sixthPicker = document.getElementById('WearscartID5');
+
+    this.notifier = document.querySelector(".notifier");
+    this.errorNotifier = document.querySelector(".action_failed");
 }
 
 cartingWearProducts.prototype = {
@@ -29,9 +32,11 @@ cartingWearProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -58,9 +63,11 @@ cartingWearProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -87,9 +94,11 @@ cartingWearProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -116,9 +125,11 @@ cartingWearProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -145,9 +156,11 @@ cartingWearProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -174,9 +187,11 @@ cartingWearProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -192,6 +207,9 @@ const cartingPhoneProducts = function(){
     this.fourthPicker = document.getElementById('PhonescartID3');
     this.fifthPicker = document.getElementById('PhonescartID4');
     this.sixthPicker = document.getElementById('PhonescartID5');
+
+    this.notifier = document.querySelector(".notifier");
+    this.errorNotifier = document.querySelector(".action_failed");
 }
 
 cartingPhoneProducts.prototype = {
@@ -214,9 +232,11 @@ cartingPhoneProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -243,9 +263,11 @@ cartingPhoneProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -272,9 +294,11 @@ cartingPhoneProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -301,9 +325,11 @@ cartingPhoneProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -330,9 +356,11 @@ cartingPhoneProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -359,9 +387,11 @@ cartingPhoneProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -377,6 +407,9 @@ const cartingElectronicsProducts = function(){
     this.fourthPicker = document.getElementById('ElectronicscartID3');
     this.fifthPicker = document.getElementById('ElectronicscartID4');
     this.sixthPicker = document.getElementById('ElectronicscartID5');
+
+    this.notifier = document.querySelector(".notifier");
+    this.errorNotifier = document.querySelector(".action_failed");
 }
 
 cartingElectronicsProducts.prototype = {
@@ -399,9 +432,11 @@ cartingElectronicsProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -428,9 +463,11 @@ cartingElectronicsProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -457,9 +494,11 @@ cartingElectronicsProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -486,9 +525,11 @@ cartingElectronicsProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -515,9 +556,11 @@ cartingElectronicsProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -544,9 +587,11 @@ cartingElectronicsProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -562,6 +607,9 @@ const cartingFurnitureProducts = function(){
     this.fourthPicker = document.getElementById('FurniturecartID3');
     this.fifthPicker = document.getElementById('FurniturecartID4');
     this.sixthPicker = document.getElementById('FurniturecartID5');
+
+    this.notifier = document.querySelector(".notifier");
+    this.errorNotifier = document.querySelector(".action_failed");
 }
 
 cartingFurnitureProducts.prototype = {
@@ -584,9 +632,11 @@ cartingFurnitureProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -613,9 +663,11 @@ cartingFurnitureProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -642,9 +694,11 @@ cartingFurnitureProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -671,9 +725,11 @@ cartingFurnitureProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -700,9 +756,11 @@ cartingFurnitureProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -729,9 +787,11 @@ cartingFurnitureProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -748,6 +808,9 @@ const cartingOfficeProducts = function(){
     this.fourthPicker = document.getElementById('OfficecartID3');
     this.fifthPicker = document.getElementById('OfficecartID4');
     this.sixthPicker = document.getElementById('OfficecartID5');
+
+    this.notifier = document.querySelector(".notifier");
+    this.errorNotifier = document.querySelector(".action_failed");
 }
 
 cartingOfficeProducts.prototype = {
@@ -770,9 +833,11 @@ cartingOfficeProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -799,9 +864,11 @@ cartingOfficeProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -828,9 +895,11 @@ cartingOfficeProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -857,9 +926,11 @@ cartingOfficeProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -886,9 +957,11 @@ cartingOfficeProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -915,9 +988,11 @@ cartingOfficeProducts.prototype = {
 
             xhr.onload=()=>{
                 if(xhr.status==200){
-                    console.log(xhr.responseText);
+                    this.notifier.innerHTML = xhr.responseText;
+                    this.notifier.style.animationPlayState = "running";
                 }else{
-                    console.log("error occured");
+                    this.errorNotifier.innerHTML = xhr.responseText;
+                    this.errorNotifier.style.animationPlayState = "running";
                 }
             }
 
@@ -929,7 +1004,7 @@ cartingOfficeProducts.prototype = {
 
 
 
-setTimeout(function() {
+setTimeout(function(){
 
     var wearCarter = new cartingWearProducts();
         wearCarter.firstProductCarter();
@@ -967,9 +1042,9 @@ setTimeout(function() {
         officeCarter.firstProductCarter();
         officeCarter.secondProductCarter();
         officeCarter.thirdProductCarter();
-        officeCarter.fourthProductCarter();
-        officeCarter.fifthProductCarter();
-        officeCarter.sixthProductCarter();
+        // officeCarter.fourthProductCarter();
+        // officeCarter.fifthProductCarter();
+        // officeCarter.sixthProductCarter();
 
 },1000);
 
